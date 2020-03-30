@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.skyvn.ten">
+
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name="com.skyvn.ten.base.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="com.skyvn.ten.view.LoginActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--主页-->
+        <activity
+            android:name="com.skyvn.ten.view.main.MainActivity"
+            android:launchMode="singleTask" />
+
+        <!--客服-->
+        <activity android:name="com.skyvn.ten.view.KefuActivity" />
+
+        <!--我的银行卡-->
+        <activity android:name="com.skyvn.ten.view.MyBankCardActivity" />
+
+        <!--反馈-->
+        <activity android:name="com.skyvn.ten.view.FanKuiActivity" />
+
+        <!--设置-->
+        <activity android:name="com.skyvn.ten.view.SettingActivity" />
+
+        <!--个人资料-->
+        <activity android:name="com.skyvn.ten.view.attentionziliao.AttentionZiliaoActivity" />
+
+        <!--绑定银行卡-->
+        <activity android:name="com.skyvn.ten.view.bindbankcard.BindBankCardActivity" />
+
+        <!--紧急联系人-->
+        <activity android:name="com.skyvn.ten.view.emergencycontact.EmergencyContactActivity" />
+
+        <!--通讯录-->
+        <activity android:name="com.skyvn.ten.view.contact.ContactActivity" />
+
+        <!--个人资料-->
+        <activity android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity" />
+
+        <!--个人资料2-->
+        <activity android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity2" />
+
+        <!--公司信息-->
+        <activity android:name="com.skyvn.ten.view.CommonMsgActivity" />
+
+        <!--短信1414-->
+        <activity android:name="com.skyvn.ten.view.Msg14Activity" />
+
+        <!--驾照-->
+        <activity android:name="com.skyvn.ten.view.JiaZhaoActivity" />
+
+        <!--小视频-->
+        <activity android:name="com.skyvn.ten.view.VideoActivity" />
+
+        <!--实名认证-->
+        <activity android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity" />
+
+        <!--实名认证2-->
+        <activity android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity2" />
+
+        <!--开始人脸识别预备页面-->
+        <activity android:name="com.skyvn.ten.view.LiveAttentionActivity" />
+
+        <!--人脸识别成功页面-->
+        <activity android:name="com.skyvn.ten.view.LiveAuthSouressActivity" />
+
+        <!--人脸识别失败页面-->
+        <activity android:name="com.skyvn.ten.view.LiveAuthErrorActivity" />
+
+        <!--系统消息页面-->
+        <activity android:name="com.skyvn.ten.view.MessageActivity" />
+
+        <!--立即借款页面-->
+        <activity android:name="com.skyvn.ten.view.ConfirmationActivity" />
+
+        <!--借款详情风格1-->
+        <activity android:name="com.skyvn.ten.view.borrow_style1.BorrowActivity1" />
+
+        <!--还款详情风格1-->
+        <activity android:name="com.skyvn.ten.view.pay_back_style1.PayBackActivity1" />
+
+        <!--还款详情风格2-->
+        <activity android:name="com.skyvn.ten.view.pay_back_style2.PayBackActivity2" />
+
+        <!--展期说明-->
+        <activity android:name="com.skyvn.ten.view.ZhanQiActivity" />
+
+        <!--所有网页加载的页面-->
+        <activity android:name="com.skyvn.ten.view.WebActivity" />
+
+        <!--还款流水页面-->
+        <activity android:name="com.skyvn.ten.view.HuanKuanListActivty" />
+
+        <!--我的借款页面-->
+        <activity android:name="com.skyvn.ten.view.MyOrderActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.skyvn.ten.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

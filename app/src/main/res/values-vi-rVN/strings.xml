@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">大闸蟹</string>
+
+    <string name="login_txt">Ký vô.</string>
+    <string name="photo_hint">Số di động</string>
+    <string name="image_verification">Mã kiểm tra đồ họa</string>
+    <string name="verification">Mật khẩu</string>
+    <string name="get_verification">Lấy mật khẩu</string>
+    <string name="reset_get_verification">Chuẩn</string>
+    <string name="new_user">Tự động đăng ký người mới</string>
+    <string name="no_to_students">Không phục vụ học sinh</string>
+
+    <string name="input_phone_error">Xin hãy nhập số điện thoại đúng</string>
+    <string name="input_image_verfication_error">Hãy nhập đoạn mã xác thực</string>
+    <string name="input_verfication_error">Hãy nhập mật mã kiểm tra đúng.</string>
+
+    <string name="home">trang chủ</string>
+    <string name="order">Khuyên</string>
+    <string name="mine">Tôi</string>
+
+    <string name="setting">Chuẩn bị</string>
+
+    <string name="my_yinghangka">Thẻ của tôi</string>
+    <string name="my_ziliao">Phần bổ sung dữ liệu</string>
+    <string name="my_kefu">Dịch vụ khách hàng</string>
+    <string name="my_fankui">phản hồi</string>
+
+    <string name="zaixiankefu">Dịch vụ trực tuyến</string>
+    <string name="zaixiankefu_hint">Nếu có vấn đề gì，Xin cứ tự nhiên liên lạc với chúng tôi</string>
+    <string name="kefudianhua1">Điện thoại khách1</string>
+    <string name="kefudianhua2">Điện thoại khách2</string>
+    <string name="zalo">Zalo</string>
+    <string name="facebook">Facebook</string>
+
+    <string name="kefudianhua">Điện thoại khách</string>
+
+    <string name="cancle">hủy</string>
+    <string name="call">Đặt</string>
+    <string name="copy">Copy</string>
+    <string name="commit">Chọn</string>
+
+    <string name="copy_sourss">Kết nối thành công！</string>
+
+    <string name="switch_card">Đổi thẻ ngân hàng</string>
+    <string name="add_card">Thêm thẻ ngân hàng</string>
+
+    <string name="no_card">Bạn chưa buộc thẻ ngân hàng，Làm ơn trói thẻ ngân hàng.</string>
+
+    <string name="yinghangka">Thẻ ngân hàng</string>
+
+    <string name="email">Hộp thư</string>
+    <string name="email_hint">Hãy cung cấp email，Tiện lợi để liên lạc với anh</string>
+    <string name="message">nội dung</string>
+    <string name="message_hint">Xin hãy nhập thông tin</string>
+    <string name="tijiao">Gởi</string>
+
+    <string name="delete_img">Xóa ảnh hay không？</string>
+
+    <string name="switch_langnger">Chọn ngôn ngữ</string>
+    <string name="logout">Đăng xuất</string>
+
+    <string name="wancheng">Hoàn</string>
+    <string name="china">Hoa</string>
+    <string name="yuelanwen">Ngôn ngữ Việt</string>
+
+    <string name="tishi">Mẹo</string>
+    <string name="is_logout">Xác nhận thoát tài khoản hiện thời？</string>
+
+    <string name="shimingrenzheng">Xác thực tên thật</string>
+    <string name="gerenziliao">Dữ liệu cá nhân</string>
+    <string name="xiaoshipin">video nhỏ</string>
+    <string name="shuanianrenzheng">Xác thực bề mặt</string>
+    <string name="jingjilianxiren">liên lạc khẩn</string>
+    <string name="gongsixinxi">Thông tin công ty</string>
+    <string name="bangdingyinghangka">Thẻ ngân hàng in</string>
+    <string name="duanxin1414">Thông điệp ngắn1414</string>
+    <string name="jiazhao">Đăng tải bằng lái</string>
+
+    <string name="renzhengziliao">Dữ liệu xác thực</string>
+
+    <string name="yiwancheng">Hoàn</string>
+    <string name="weiwancheng">Hang in the air</string>
+
+    <string name="zhanghaoxingming">Tên tài khoản</string>
+    <string name="yinghangkahao">Số thẻ ngân hàng</string>
+    <string name="yinghangmingcheng">Tên ngân hàng</string>
+    <string name="suoshuzhihang">nhánh phụ thuộc</string>
+
+    <string name="next">Bước kế tiếp</string>
+    <string name="one_contact">Đầu tiên</string>
+    <string name="two_contact">Định giá liên lạc</string>
+
+    <string name="guanxi">liên hệ</string>
+    <string name="dianhuahaoma">Số điện thoại</string>
+    <string name="xingming">Tên đầy đủ</string>
+
+    <string name="contact_hint">Tôi cho phép giao tiếp khẩn cấp trên khi tôi không thể liên lạc được.</string>
+    <string name="contact">Danh sách thư</string>
+
+    <string name="xueli">Giáo</string>
+    <string name="hunyinzhuangkuang">Tình trạng hôn nhân</string>
+    <string name="zinvshuliang">Số đứa trẻ</string>
+    <string name="juzhushichang">Số lần thử lại:</string>
+    <string name="dangqianjuzhudizhi">Địa chỉ nhà</string>
+
+    <string name="zalo_num">ZaloSố tài khoản</string>
+    <string name="facebook_num">FacebookSố tài khoản</string>
+
+
+    <string name="gongsimingcheng">Tên công ty</string>
+    <string name="xiangxidizhi">Địa chỉ chi tiết</string>
+    <string name="lianxidianhua">Số liên lạc</string>
+
+    <string name="zhicheng_title">Tựa/thu nhập</string>
+    <string name="zhicheng">Tựa</string>
+    <string name="shuiqianshouru">Thu nhập trước thuế</string>
+    <string name="gongzuoshichang">Thời gian làm việc</string>
+
+    <string name="tiaoguo">Comment</string>
+
+    <string name="add_img_hint">Xin hãy chụp ảnh rõ ràng, việc này sẽ làm nhanh giấy chứng nhận</string>
+    <string name="msg_warning_hint">Xin hãy tải ảnh chụp trong suốt, nó sẽ tăng tốc độ xác thực của bạn</string>
+
+    <string name="msg_title">Vui lòng tải màn hình xác thực 1414.</string>
+    <string name="msg_remark">Ghi chú: nội dung văn bản gởi bởi tttb 144</string>
+
+    <string name="jiazhaozhengmian">Bằng lái xe phía trước</string>
+    <string name="jiazhaofanmian">Bằng lái xe</string>
+
+    <string name="video_hint">Xin hãy chụp một đoạn video nhỏ có thẻ ID để giữ điện thoại di động ổn định mà không rung động.</string>
+
+    <string name="video_title">Hình ảnh nhỏ của thẻ ID</string>
+
+    <string name="jibenxinxi">Thông tin cốt yếu</string>
+    <string name="shenfenzhenghaoma">Thẻ căn cước</string>
+    <string name="chushengriqi">Ngày sinh</string>
+    <string name="xingbie">Giới</string>
+
+    <string name="nan">đực</string>
+    <string name="nv">phụ</string>
+    <string name="qita">Khác</string>
+
+    <string name="shenfenzhengzhaopian">Thẻ căn cước</string>
+
+    <string name="shenfenzhengzhengmian">Mặt trước thẻ ID</string>
+    <string name="shenfenzhengfangmian">Dòng thẳng đứng</string>
+
+    <string name="live_auth">Đánh răng một khuôn mặt đẹp trai và xinh đẹp, và bạn có thể sớm vay tiền.</string>
+    <string name="wenxintishi">Nhắc</string>
+    <string name="live_hint1">1、Vui lòng đặt mặt bạn trong phạm vi đã xác định</string>
+    <string name="live_hint2">2、Làm ơn để nó hướng vào điện thoại, sáng quá.</string>
+    <string name="live_hint3">3、Xin hãy theo nhắc lại hệ thống</string>
+    <string name="live_hint4">4、Vui lòng giữ một môi trường mạng tốt.</string>
+    <string name="go_live">Đánh răng đi.</string>
+
+    <string name="live_sourss">Phát hiện thành công</string>
+    <string name="live_error">Lỗi thử thách</string>
+
+    <string name="chongshi">thử</string>
+
+    <string name="login_hint">Lỗi mã kiểm tra đồ họa！</string>
+    <string name="email_hint_toast">Hãy nhập thông tin liên lạc！</string>
+    <string name="content_hint_toast">Xin hãy nhập kết quả！</string>
+
+    <string name="commit_sourss_toast">Gửi thành công！</string>
+
+    <string name="user_name_toast">Hãy nhập tên tài khoản！</string>
+    <string name="bank_num_toast">Xin hãy nhập số thẻ ngân hàng！</string>
+    <string name="yinghang_name_toast">Hãy chọn tên ngân hàng！</string>
+    <string name="suoshuzhihang_toast">Xin mời vào chi nhánh.！</string>
+
+    <string name="hunyin1">Chưa cưới</string>
+    <string name="hunyin2">cưới</string>
+    <string name="hunyin3">Ly dị</string>
+    <string name="hunyin4">Vợ chồng rộng</string>
+
+    <string name="fuqin">cha</string>
+    <string name="muqin">mẹ</string>
+    <string name="peiou">người cưới</string>
+    <string name="erzi">Son.</string>
+    <string name="nver">con gái</string>
+
+    <string name="xiongdi">Anh</string>
+    <string name="pengyou">Bạn</string>
+    <string name="tongshi">Comment</string>
+    <string name="tongxue">Name</string>
+    <string name="qinqi">Tương</string>
+
+    <string name="xueli_toast">Hãy chọn nền giáo dục！</string>
+    <string name="hunyin_toast">Hãy chọn tình trạng hôn nhân！</string>
+    <string name="zinv_num_toast">Hãy chọn số con cái！</string>
+    <string name="juzhu_time_toast">Xin hãy chọn độ dài của kỳ nghỉ.！</string>
+    <string name="juzhudizhi_toast">Hãy nhập địa chỉ dân cư hiện tại！</string>
+
+    <string name="common_name_toast">Hãy nhập tên công ty！</string>
+    <string name="common_address_toast">Hãy nhập địa chỉ chi tiết.！</string>
+    <string name="common_zhicheng_toast">Hãy chọn tựa đề！</string>
+    <string name="common_shouru_toast">Hãy chọn thu nhập trước thuế！</string>
+    <string name="common_shichang_toast">Hãy chọn giờ làm việc！</string>
+    <string name="common_img_toast">Vui lòng chọn ảnh công ty！</string>
+    <string name="sms_hint_toast">Vui lòng tải màn hình xác thực！</string>
+
+    <string name="jiazhaozhengmian_toast">Vui lòng tải lên ảnh trước của bằng lái！</string>
+    <string name="jiazhaofanmian_toast">Xin hãy tải ảnh đảo ngược của bằng lái.！</string>
+
+    <string name="video_toast">Xin hãy tải một đoạn video nhỏ.！</string>
+
+    <string name="wanshan_toast">Hoàn tất các mục cần thiết！</string>
+
+    <string name="contact_aleg_dialog">File tráo đổi vCalendar Comment，\nChúng tôi sẽ bảo vệ riêng tư</string>
+    <string name="hao">tốt</string>
+    <string name="buyunxu">Không cho phép</string>
+
+    <string name="jixurenzheng">Tiếp tục chứng nhận</string>
+    <string name="fangqishenqing">Hoãn ứng dụng</string>
+
+    <string name="jine">Số tiền</string>
+    <string name="yuan">（nguyên tố）</string>
+    <string name="qixian">Dài</string>
+    <string name="tian">（ngày）</string>
+
+    <string name="lijijiekuan">Tài khoản nhanh</string>
+    <string name="lianxikefu">Liên lạc với khách hàng</string>
+
+    <string name="daiqueren">Để được xác nhận</string>
+    <string name="daihuankuan">Chưa trả nợ</string>
+    <string name="yijieshu">Đã kết thúc</string>
+
+    <string name="jiekuanjine">Số khoản vay：</string>
+    <string name="jiekuanqixian">Khoảng thời gian vay：</string>
+
+    <string name="xitong_message">Thông điệp hệ thống</string>
+    <string name="jiekuan_content">Kính gửi cậu.Nhấn vào (xác nhận rút lui) để đồng ý với:：</string>
+    <string name="jiekuan_jine">Số khoản vay</string>
+    <string name="jiekuan_qixian">Khoảng thời gian vay</string>
+
+    <string name="danwei_yuan">nguyên tố</string>
+    <string name="danwei_tian">ngày</string>
+
+    <string name="jiekuandaozhang">Tài khoản vay</string>
+    <string name="lixi">Tiền</string>
+    <string name="fuwufei">Phí dịch vụ</string>
+    <string name="daoqiyinghuan">Trả lại</string>
+    <string name="yuqiguanlifei">Phí quản lý thừa</string>
+
+    <string name="jiekuan_hint1">Đọc và đồng ý</string>
+    <string name="jiekuan_hint2">《Hợp đồng vay mạng》</string>
+    <string name="jiekuan_hint3">và</string>
+    <string name="jiekuan_hint4">《Giao dịch》</string>
+
+    <string name="querentixian">Xác nhận rút lui</string>
+    <string name="jiekuan_shuoming1">Ghi chú: Trả nợ quá hạn nhưng chưa trả</string>
+    <string name="jiekuan_shuoming2">Quản lý phụ phí</string>
+    <string name="jiekuan_shuoming3">，Vui lòng sắp xếp lại lịch trình trả nợ</string>
+    <string name="fangkuanfang_xinxi">Thông tin Thấu kính：</string>
+
+    <string name="kefudianhua_yinghao">Số điện thoại dịch vụ khách：</string>
+    <string name="querenjiekuan">Xác nhận khoản vay</string>
+
+    <string name="yinghuanjine">Trả trước</string>
+    <string name="yinghuanjine_yinghao">Trả trước：</string>
+    <string name="yihuanjine">Số đã trả</string>
+
+    <string name="huankuanjilu">Lịch sử thanh toán</string>
+
+    <string name="no_more">Không còn nữa.</string>
+    <string name="jiekuanxiangqing">Chi tiết vay</string>
+    <string name="huankuanxiangqing">chi tiết</string>
+
+    <string name="zhanqi_title">Bản tóm tắt</string>
+    <string name="zhanqi_hint">Nếu bạn muốn kéo dài thời gian, xin hãy theo bước sau:</string>
+    <string name="zhanqi_hint1">Liên lạc với dịch vụ khách hàng hay người sưu tập để xin thêm.</string>
+    <string name="zhanqi_hint2">Trả đồng tiền mở rộng</string>
+    <string name="zhanqi_hint3">Gởi hóa đơn bồi thường cho khách hàng</string>
+    <string name="zhanqi_hint4">Đang đợi kiểm toán</string>
+    <string name="zhanqi_hint5">Thành công ứng dụng</string>
+
+    <string name="huankuanfangshi">Phương pháp bồi thường</string>
+    <string name="lijizhanqi">Mở rộng tức thì</string>
+
+    <string name="zhuyishixiang">Vấn đề cần chú ý</string>
+    <string name="zhuyimessage">
+        1 Xin hãy điền: tên bạn +số điện thoại của bạn tên ứng dụng +\n
+        2 Nếu bạn đến điểm trả tiền nóng để trả nợ, hãy nói với nhân viên trả bằng tiền trợ cấp.\n
+        3 Sau khi thanh toán, xin hãy liên lạc với dịch vụ khách hàng.
+    </string>
+
+    <string name="lijihuankuan">Sớm trả nợ</string>
+    <string name="lijizhanqi_hint">Muốn hoãn việc thanh to án?Chúng ta sẽ mở rộng nó.</string>
+    <string name="shenqing_riqi">Ngày ứng dụng：</string>
+    <string name="jiekuan_riqi">Ngày vay：</string>
+    <string name="yinghuankuan_riqi">Ngày hạn：</string>
+
+    <string name="shenhezhong">Kiểm toán</string>
+    <string name="lijitixian">Ngay lập tức rút lui</string>
+    <string name="shenhebutongguo">Lỗi kiểm toán</string>
+    <string name="zhengchangyihuan">Tổng hồi</string>
+    <string name="zhanqiyihuan">Buổi triển lãm đã được quay lại.</string>
+    <string name="yuqiyihuan">Ghi</string>
+    <string name="weitixian">Chưa đề cập</string>
+    <string name="zaijieyici">Cho mượn lại đi.</string>
+
+    <string name="fuwufeimingxi">Chi tiết phí dịch vụ</string>
+
+    <string name="guanbi">Đóng</string>
+    <string name="tixian_souress">Từ khoá thành công</string>
+    <string name="tixian_hint">Chúc mừng thành công của anh\nNó sẽ đến trong vòng hai giờ. Xin kiểm tra lại.。</string>
+
+    <string name="guanggao">Quảng cáo</string>
+    <string name="shenqingyitijiao">Đơn xin của anh đã được gửi</string>
+    <string name="womenzhengzaishenhe">Chúng tôi đang xem</string>
+    <string name="youjieguonaixindengdai">Sẽ có kết quả sớm thôi.</string>
+
+    <string name="yitijiaoshenqing">Hôm nay anh đã nộp đơn</string>
+    <string name="mingtianzailai">Hãy quay lại vào ngày mai.</string>
+    <string name="mingtianjingxi">Sẽ có bất ngờ vào ngày mai.~</string>
+
+    <string name="shenqingjine">Đơn xin：</string>
+    <string name="yiyuqi">Ghi</string>
+
+    <string name="zuihouqixian">Ngày cuối cùng：</string>
+    <string name="jiekuanshijian">Mượn giờ：</string>
+    <string name="bufenhuankuan">Giảm phần</string>
+
+    <string name="huankuanshijian">Thời gian thanh toán：</string>
+
+    <string name="fangshi">Chế độ</string>
+    <string name="yinghang_kahao">Số thẻ ngân hàng：</string>
+    <string name="shoukuanren">&#12288;Nợ：</string>
+    <string name="shoukuanyinghang">Ngân hàng thu：</string>
+    <string name="zhihangmingcheng">chi nhánh ngân hàng：</string>
+
+    <string name="xieyi_hint">Hãy đồng ý thỏa thuận trước.！</string>
+
+    <string name="shenfenzhengyanzheng">Kiểm tra thẻ nhận diện</string>
+    <string name="gerenzhuangkuang">Tình trạng cá nhân</string>
+    <string name="qurenzheng">Giấy chứng nhận</string>
+
+    <string name="tuijian_hint1">Anh có muốn mượn thêm không , </string>
+    <string name="tuijian_hint2">nhắp vào đây , </string>
+    <string name="tuijian_hint3">Buôn bán nhanh và dễ dàng</string>
+
+    <string name="tuijian_status7">Chúc mừng.</string>
+    <string name="tuijian_status8">Đơn xin của bạn đã được chấp thuận！</string>
+    <string name="tuijian_status9">Không còn rút tiền, hệ thống sẽ kết thúc mọi thứ.</string>
+
+    <string name="tuijian_status4">Đơn xin của anh đã được gửi</string>
+    <string name="tuijian_status5">Chúng tôi đang xem</string>
+    <string name="tuijian_status6">Sẽ có kết quả sớm thôi.</string>
+    <string name="liaojiegengduo">Tìm hiểu thêm</string>
+    <string name="wushuju">Không có dữ liệu！</string>
+    <string name="kejiejineyuan">Số khoản vay(VND)</string>
+    <string name="shouxinqixianshengyu">Vẫn còn hạn tín dụng：</string>
+    <string name="xiangjiejitian">Tôi muốn mượn nó vài ngày.</string>
+    <string name="home_attention_hint1">Chỉ mất một phút để hoàn thành chứng nhận, và giây thứ hai là giới hạn.</string>
+    <string name="home_attention_hint2">Chúc mừng đã lấy được chỉ tiêu, xin nộp đơn rút tiền.</string>
+    <string name="mashangshenqing">Áp dụng ngay</string>
+    <string name="huoquwodeedu">Lấy chỉ tiêu của tôi.</string>
+    <string name="home_exmine_hint1">Nó có thể hoàn thành trong trung bình không đầy năm phút. Xin hãy nghỉ ngơi và chú ý đến lời nhắc nhắn tin về tin nhắn.</string>
+    <string name="yiyuqi_yinhao">Ghi：</string>
+    <string name="home_yuqi_hint1">Bạn đã nhập vào danh sách rủi ro cao. sự thiếu trả nợ sẽ ảnh hưởng đến tín dụng cá nhân và những cuộc mượn tiếp theo.Xin hãy trả sớm nhất có thể.！</string>
+    <string name="yuqiweiyuejin">Nguy hiểm hết hạn</string>
+    <string name="daihuanjine_vnd">Số tiền phải trả（VND）</string>
+    <string name="huankuanjine_vnd">Số bù nợ（VND）</string>
+    <string name="shuaxinyixia">Cập nhật</string>
+    <string name="jiekuanyihuanqing">Trả nợ</string>
+    <string name="home_souress_hint">Trong việc xem xét giới hạn vay mượn lại, nó sẽ khôi phục giới hạn cho bạn trong khoảng 5p.。</string>
+    <string name="daihuankuanjine">Khoản tiền phải trả</string>
+    <string name="xiangqing">chi tiết</string>
+    <string name="wodejiekuan">Tiền của tôi</string>
+    <string name="none_order">Không còn nợ</string>
+    <string name="renzhengguoqi_hint">Giấy chứng nhận đã hết hạn, xin nộp lại lần nữa.</string>
+    <string name="yunyingshangshixiao_hint">Xác thực dữ liệu tổng đài không hợp lệ, xin hãy xác nhận.</string>
+    <string name="weidenglu">Chưa đăng nhập</string>
+    <string name="shenhe_weitongguo">Xin lỗi, chúng tôi không kiểm tra</string>
+    <string name="wuyinghangkaxinxi">Không có thông tin tài khoản ngân hàng！</string>
+    <string name="fangkuan_yinghang1">Trong thời gian vay, nó sẽ đến tài khoản cuối cùng của bạn trong vòng mười phút.</string>
+    <string name="de">Của</string>
+    <string name="fangkuan_yinghang2">Xin kiểm tra tài khoản。</string>
+    <string name="butongyinghangdaozhang">Hãy kiên nhẫn chờ các ngân hàng khác đến tài khoản với tốc độ hơi khác nhau.。</string>
+    <string name="fangkuanshibai">Lỗi vay, liên lạc với dịch vụ khách hàng</string>
+    <string name="daozhangjine">Số khoản phải trả(VND)</string>
+    <string name="chakanxiangqing">Xem chi tiết</string>
+    <string name="shenqingzhanqi">Yêu cầu mở rộng</string>
+    <string name="yinghuanjine_yuan">Trả trước(ngày)</string>
+    <string name="huankuanchulizhong">Chế độ phục hồi...</string>
+    <string name="bufenhuankuan_loading">Phần đáp trả, xin chờ....</string>
+    <string name="zhanqijine_vnd">Nguồn gốc（VND）</string>
+    <string name="zhanqitianshu_tian">Sự kéo dài（ngày）</string>
+    <string name="zhanqi_loading">Phần mở rộng, xin đợi...</string>
+    <string name="jianmianjine_vnd">Giá trị giọt（VND）</string>
+    <string name="jianmian_loading">Xin hãy đợi trong khi quá trình xử lý việc giảm nợ....</string>
+    <string name="edubugou_hint1">Hiện tại không có sản phẩm cho vay nào，</string>
+    <string name="edubugou_hint2">Quay lại sau nhé.</string>
+    <string name="wurenzheng">Không có chứng nhận！</string>
+    <string name="sms_aleg_dialog">Mã xác nhận phải upload các hóa đơn, chúng tôi sẽ bảo vệ nghiêm ngặt sự riêng tư.</string>
+    <string name="zhengzaijiazai">Đang tải xuống</string>
+    <string name="faxianxinbanben">Tìm phiên bản mới</string>
+    <string name="shifoulijigengxin">Cập nhật bây giờ hoặc không？</string>
+    <string name="tijiaochenggong">Gửi thành công</string>
+    <string name="jinkuaishenhe">Chào mừng dùng\nChúng tôi sẽ xem lại đơn xin của anh càng sớm càng tốt</string>
+    <string name="shenfenzheng_xianzhi">身份证号为9位或12位！</string>
+    <string name="jingjilianxiren_xianzhi">联系人手机号需为10位，请重新选择！</string>
+    <string name="yinghangkaleixing">银行卡类型</string>
+    <string name="yinghangzhanghao">银行账号</string>
+    <string name="wupipei_title">尊敬的申请人，您的额度不足，没有匹配的产品，</string>
+    <string name="qing">请</string>
+    <string name="qingxianrenzhengshangyige">请先认证上一个认证项</string>
+
+</resources>

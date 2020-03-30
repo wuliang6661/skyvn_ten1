@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">大闸蟹</string>
+
+    <string name="login_txt">登录</string>
+    <string name="photo_hint">手机号</string>
+    <string name="image_verification">图形验证码</string>
+    <string name="verification">验证码</string>
+    <string name="get_verification">获取验证码</string>
+    <string name="reset_get_verification">重新获取</string>
+    <string name="new_user">新用户自动注册</string>
+    <string name="no_to_students">不向学生提供服务</string>
+
+    <string name="input_phone_error">请输入正确的手机号</string>
+    <string name="input_image_verfication_error">请输入正确的图形验证码</string>
+    <string name="input_verfication_error">请输入正确的验证码</string>
+
+    <string name="home">首页</string>
+    <string name="order">推荐</string>
+    <string name="mine">我的</string>
+
+    <string name="setting">设置</string>
+
+    <string name="my_yinghangka">我的银行卡</string>
+    <string name="my_ziliao">资料补充</string>
+    <string name="my_kefu">客服</string>
+    <string name="my_fankui">反馈</string>
+
+    <string name="zaixiankefu">在线客服</string>
+    <string name="zaixiankefu_hint">如果有问题，请随时通过下面的方式联系我们</string>
+    <string name="kefudianhua1">客户电话1</string>
+    <string name="kefudianhua2">客户电话2</string>
+    <string name="zalo">Zalo</string>
+    <string name="facebook">Facebook</string>
+
+    <string name="kefudianhua">客服电话</string>
+
+    <string name="cancle">取消</string>
+    <string name="call">呼叫</string>
+    <string name="copy">复制</string>
+    <string name="commit">确定</string>
+
+    <string name="copy_sourss">复制成功！</string>
+
+    <string name="switch_card">更换银行卡</string>
+    <string name="add_card">添加银行卡</string>
+
+    <string name="no_card">您还未绑定银行卡，请绑定银行卡</string>
+
+    <string name="yinghangka">银行卡</string>
+
+    <string name="email">邮箱</string>
+    <string name="email_hint">提供您的邮箱，可以方便我们联系您</string>
+    <string name="message">内容</string>
+    <string name="message_hint">请输入您要反馈的内容</string>
+    <string name="tijiao">提交</string>
+
+    <string name="delete_img">是否删除图片？</string>
+
+    <string name="switch_langnger">语言选择</string>
+    <string name="logout">退出登录</string>
+
+    <string name="wancheng">完成</string>
+    <string name="china">中文</string>
+    <string name="yuelanwen">越南文</string>
+
+    <string name="tishi">提示</string>
+    <string name="is_logout">确认退出当前账号？</string>
+
+    <string name="shimingrenzheng">实名认证</string>
+    <string name="gerenziliao">个人资料</string>
+    <string name="xiaoshipin">小视频</string>
+    <string name="shuanianrenzheng">刷脸认证</string>
+    <string name="jingjilianxiren">紧急联系人</string>
+    <string name="gongsixinxi">公司信息</string>
+    <string name="bangdingyinghangka">绑定银行卡</string>
+    <string name="duanxin1414">短信1414</string>
+    <string name="jiazhao">驾照上传</string>
+
+    <string name="renzhengziliao">认证资料</string>
+
+    <string name="yiwancheng">已完成</string>
+    <string name="weiwancheng">未完成</string>
+
+    <string name="zhanghaoxingming">账号姓名</string>
+    <string name="yinghangkahao">银行卡号</string>
+    <string name="yinghangmingcheng">银行名称</string>
+    <string name="suoshuzhihang">所属支行</string>
+
+    <string name="next">下一步</string>
+    <string name="one_contact">第一联系人</string>
+    <string name="two_contact">第二联系人</string>
+
+    <string name="guanxi">关系</string>
+    <string name="dianhuahaoma">电话号码</string>
+    <string name="xingming">姓名</string>
+
+    <string name="contact_hint">当联系不到我本人时，我授权以上紧急联系人</string>
+    <string name="contact">通讯录</string>
+
+    <string name="xueli">学历</string>
+    <string name="hunyinzhuangkuang">婚姻状况</string>
+    <string name="zinvshuliang">子女数量</string>
+    <string name="juzhushichang">居住时长</string>
+    <string name="dangqianjuzhudizhi">当前居住地址</string>
+
+    <string name="zalo_num">Zalo账号</string>
+    <string name="facebook_num">Facebook账号</string>
+
+
+    <string name="gongsimingcheng">公司名称</string>
+    <string name="xiangxidizhi">详细地址</string>
+    <string name="lianxidianhua">联系电话</string>
+
+    <string name="zhicheng_title">职称/收入</string>
+    <string name="zhicheng">职称</string>
+    <string name="shuiqianshouru">税前收入</string>
+    <string name="gongzuoshichang">工作时长</string>
+
+    <string name="tiaoguo">跳过</string>
+
+    <string name="add_img_hint">请拍摄清晰的照片，这会加快你的认证速度</string>
+    <string name="msg_warning_hint">请上传清晰的截图，这会加快您的认证速度</string>
+
+    <string name="msg_title">请上传您的1414认证截图</string>
+    <string name="msg_remark">备注：短信内容TTTB寄出1414</string>
+
+    <string name="jiazhaozhengmian">驾照正面</string>
+    <string name="jiazhaofanmian">驾照反面</string>
+
+    <string name="video_hint">请拍摄手持身份证小视频，保持手机平稳，不要抖动</string>
+
+    <string name="video_title">手持身份证小视频</string>
+
+    <string name="jibenxinxi">基本信息</string>
+    <string name="shenfenzhenghaoma">身份证号码</string>
+    <string name="chushengriqi">出生日期</string>
+    <string name="xingbie">性别</string>
+
+    <string name="nan">男</string>
+    <string name="nv">女</string>
+    <string name="qita">其他</string>
+
+    <string name="shenfenzhengzhaopian">身份证照片</string>
+
+    <string name="shenfenzhengzhengmian">身份证正面</string>
+    <string name="shenfenzhengfangmian">身份证反面</string>
+
+    <string name="live_auth">刷个帅气美丽的脸，马上就可以借款啦</string>
+    <string name="wenxintishi">温馨提示</string>
+    <string name="live_hint1">1、请将脸放在指定范围内</string>
+    <string name="live_hint2">2、请保持正对手机，光线明亮</string>
+    <string name="live_hint3">3、请按照系统提示进行操作</string>
+    <string name="live_hint4">4、请保持良好的网络环境</string>
+    <string name="go_live">去刷脸</string>
+
+    <string name="live_sourss">检测成功</string>
+    <string name="live_error">检测失败</string>
+
+    <string name="chongshi">重试</string>
+
+    <string name="login_hint">图形验证码错误！</string>
+    <string name="email_hint_toast">请输入联系方式！</string>
+    <string name="content_hint_toast">请输入反馈的内容！</string>
+
+    <string name="commit_sourss_toast">提交成功！</string>
+
+    <string name="user_name_toast">请输入账号姓名！</string>
+    <string name="bank_num_toast">请输入银行卡号！</string>
+    <string name="yinghang_name_toast">请选择银行名称！</string>
+    <string name="suoshuzhihang_toast">请输入所属支行！</string>
+
+    <string name="hunyin1">未婚</string>
+    <string name="hunyin2">已婚</string>
+    <string name="hunyin3">离异</string>
+    <string name="hunyin4">丧偶</string>
+
+    <string name="fuqin">父亲</string>
+    <string name="muqin">母亲</string>
+    <string name="peiou">配偶</string>
+    <string name="erzi">儿子</string>
+    <string name="nver">女儿</string>
+
+    <string name="xiongdi">兄弟</string>
+    <string name="pengyou">朋友</string>
+    <string name="tongshi">同事</string>
+    <string name="tongxue">同学</string>
+    <string name="qinqi">亲戚</string>
+
+    <string name="xueli_toast">请选择学历！</string>
+    <string name="hunyin_toast">请选择婚姻状况！</string>
+    <string name="zinv_num_toast">请选择子女数量！</string>
+    <string name="juzhu_time_toast">请选择居住时长！</string>
+    <string name="juzhudizhi_toast">请输入当前居住地址！</string>
+
+    <string name="common_name_toast">请输入公司名称！</string>
+    <string name="common_address_toast">请输入详细地址！</string>
+    <string name="common_zhicheng_toast">请选择职称！</string>
+    <string name="common_shouru_toast">请选择税前收入！</string>
+    <string name="common_shichang_toast">请选择工作时长！</string>
+    <string name="common_img_toast">请选择公司图片！</string>
+    <string name="sms_hint_toast">请上传认证截图！</string>
+
+    <string name="jiazhaozhengmian_toast">请上传驾照正面图片！</string>
+    <string name="jiazhaofanmian_toast">请上传驾照反面图片！</string>
+
+    <string name="video_toast">请上传小视频！</string>
+
+    <string name="wanshan_toast">请完善必填项！</string>
+
+    <string name="contact_aleg_dialog">认证必须上传通讯录，\n我们将严格保护你的隐私</string>
+    <string name="hao">好</string>
+    <string name="buyunxu">不允许</string>
+
+    <string name="jixurenzheng">继续认证</string>
+    <string name="fangqishenqing">放弃申请</string>
+
+    <string name="jine">金额</string>
+    <string name="yuan">（元）</string>
+    <string name="qixian">期限</string>
+    <string name="tian">（天）</string>
+
+    <string name="lijijiekuan">立即借款</string>
+    <string name="lianxikefu">联系客服</string>
+
+    <string name="daiqueren">待确认</string>
+    <string name="daihuankuan">待还款</string>
+    <string name="yijieshu">已结束</string>
+
+    <string name="jiekuanjine">借款金额：</string>
+    <string name="jiekuanqixian">借款期限：</string>
+
+    <string name="xitong_message">系统消息</string>
+    <string name="jiekuan_content">尊敬的申请人，您好。点击【确认提现】视为同意以下内容：</string>
+    <string name="jiekuan_jine">借款金额</string>
+    <string name="jiekuan_qixian">借款期限</string>
+
+    <string name="danwei_yuan">元</string>
+    <string name="danwei_tian">天</string>
+
+    <string name="jiekuandaozhang">借款到账</string>
+    <string name="lixi">利息</string>
+    <string name="fuwufei">服务费</string>
+    <string name="daoqiyinghuan">到期应还</string>
+    <string name="yuqiguanlifei">逾期管理费</string>
+
+    <string name="jiekuan_hint1">已阅读并同意</string>
+    <string name="jiekuan_hint2">《网络借款合同》</string>
+    <string name="jiekuan_hint3">和</string>
+    <string name="jiekuan_hint4">《服务协议》</string>
+
+    <string name="querentixian">确认提现</string>
+    <string name="jiekuan_shuoming1">说明：到期未还或未还清，需支付逾期</string>
+    <string name="jiekuan_shuoming2">管理费</string>
+    <string name="jiekuan_shuoming3">，请妥善安排还款计划</string>
+    <string name="fangkuanfang_xinxi">放款方信息：</string>
+
+    <string name="kefudianhua_yinghao">客服电话：</string>
+    <string name="querenjiekuan">确认借款</string>
+
+    <string name="yinghuanjine">应还金额</string>
+    <string name="yinghuanjine_yinghao">应还金额：</string>
+    <string name="yihuanjine">已还金额</string>
+
+    <string name="huankuanjilu">还款记录</string>
+
+    <string name="no_more">没有更多了</string>
+    <string name="jiekuanxiangqing">借款详情</string>
+    <string name="huankuanxiangqing">还款详情</string>
+
+    <string name="zhanqi_title">展期说明</string>
+    <string name="zhanqi_hint">如果您想展期，请按下面的步骤进行</string>
+    <string name="zhanqi_hint1">联系客服或催收员,申请展期</string>
+    <string name="zhanqi_hint2">线下支付展期费用</string>
+    <string name="zhanqi_hint3">将支付凭证提交给客服或催收员</string>
+    <string name="zhanqi_hint4">等待审核</string>
+    <string name="zhanqi_hint5">展期申请成功</string>
+
+    <string name="huankuanfangshi">还款方式</string>
+    <string name="lijizhanqi">立即展期</string>
+
+    <string name="zhuyishixiang">注意事项</string>
+    <string name="zhuyimessage">
+        1 打款备注信息请填写: 您的姓名+您的手机号+APP名称；\n
+        2 如果您到Viettel付款热点进行还款，请告诉工作人员要使用Funpay支付；\n
+        3 打款完成后，请联系客服或催收人员。
+    </string>
+
+    <string name="lijihuankuan">立即还款</string>
+    <string name="lijizhanqi_hint">想延期还款？立即展期了解一下。</string>
+    <string name="shenqing_riqi">申请日期：</string>
+    <string name="jiekuan_riqi">借款日期：</string>
+    <string name="yinghuankuan_riqi">应还款日期：</string>
+
+    <string name="shenhezhong">审核中</string>
+    <string name="lijitixian">立即提现</string>
+    <string name="shenhebutongguo">审核不通过</string>
+    <string name="zhengchangyihuan">正常已还</string>
+    <string name="zhanqiyihuan">展期已还</string>
+    <string name="yuqiyihuan">逾期已还</string>
+    <string name="weitixian">未提现</string>
+    <string name="zaijieyici">再借一次</string>
+
+    <string name="fuwufeimingxi">服务费明细</string>
+
+    <string name="guanbi">关闭</string>
+    <string name="tixian_souress">提现成功</string>
+    <string name="tixian_hint">恭喜您提现成功\n预计在2小时内会到账，请注意查收。</string>
+
+    <string name="guanggao">广告</string>
+    <string name="shenqingyitijiao">您的申请已提交</string>
+    <string name="womenzhengzaishenhe">我们正在审核</string>
+    <string name="youjieguonaixindengdai">很快就有结果，请耐心等待</string>
+
+    <string name="yitijiaoshenqing">今天您已提交过申请</string>
+    <string name="mingtianzailai">请明天再来</string>
+    <string name="mingtianjingxi">明天还有惊喜哦~</string>
+
+    <string name="shenqingjine">申请金额：</string>
+    <string name="yiyuqi">已逾期</string>
+
+    <string name="zuihouqixian">最后还款期限：</string>
+    <string name="jiekuanshijian">借款时间：</string>
+    <string name="bufenhuankuan">部分还款</string>
+
+    <string name="huankuanshijian">还款时间：</string>
+
+    <string name="fangshi">方式</string>
+    <string name="yinghang_kahao">银行卡号：</string>
+    <string name="shoukuanren">&#12288;收款人：</string>
+    <string name="shoukuanyinghang">收款银行：</string>
+    <string name="zhihangmingcheng">支行名称：</string>
+
+    <string name="xieyi_hint">请先同意协议！</string>
+
+    <string name="shenfenzhengyanzheng">身份证验证</string>
+    <string name="gerenzhuangkuang">个人状况</string>
+    <string name="qurenzheng">去认证</string>
+
+    <string name="tuijian_hint1">您想需要更多借款吗 , </string>
+    <string name="tuijian_hint2">点击这里 , </string>
+    <string name="tuijian_hint3">轻松快速放款</string>
+
+    <string name="tuijian_status7">恭喜您</string>
+    <string name="tuijian_status8">您的申请已审核通过！</string>
+    <string name="tuijian_status9">再不提现，系统将关闭订单</string>
+
+    <string name="tuijian_status4">您的申请已提交</string>
+    <string name="tuijian_status5">我们正在审核</string>
+    <string name="tuijian_status6">很快就有结果，请耐心等待</string>
+
+    <string name="liaojiegengduo">了解更多</string>
+
+    <string name="wushuju">无数据！</string>
+    <string name="kejiejineyuan">可借金额(元)</string>
+    <string name="shouxinqixianshengyu">授信期限剩余：</string>
+    <string name="xiangjiejitian">想借几天</string>
+    <string name="home_attention_hint1">只要1分钟完成认证，秒得额度</string>
+    <string name="home_attention_hint2">恭喜获得额度,立即申请提现吧</string>
+    <string name="mashangshenqing">马上申请</string>
+    <string name="huoquwodeedu">获取我的额度</string>
+    <string name="home_exmine_hint1">平均不超过5分钟即可完成，请您休息片\n刻，留意手机短信提醒</string>
+    <string name="yiyuqi_yinhao">已逾期：</string>
+    <string name="home_yuqi_hint1">你已进入信用高风险名单，不及时还款将影响个人信用及后续借款。请尽快还款！</string>
+    <string name="yuqiweiyuejin">逾期违约金</string>
+    <string name="daihuanjine_vnd">待还金额（VND）</string>
+    <string name="huankuanjine_vnd">还款金额（VND）</string>
+    <string name="shuaxinyixia">刷新一下</string>
+    <string name="jiekuanyihuanqing">借款已还清</string>
+    <string name="home_souress_hint">复借额度审核中，大约5分钟会为您恢复额度。</string>
+    <string name="daihuankuanjine">待还款金额</string>
+    <string name="xiangqing">详情</string>
+    <string name="wodejiekuan">我的借款</string>
+    <string name="none_order">没有待还借款</string>
+    <string name="renzhengguoqi_hint">您的认证已过期，请重新提交</string>
+    <string name="yunyingshangshixiao_hint">您的运营商数据认证无效，请重新认证</string>
+    <string name="weidenglu">未登录</string>
+    <string name="shenhe_weitongguo">很抱歉，您未通过我们的审核</string>
+    <string name="wuyinghangkaxinxi">无银行卡账号信息！</string>
+    <string name="fangkuan_yinghang1">放款中，预计10分钟内到您尾号</string>
+    <string name="de">的</string>
+    <string name="fangkuan_yinghang2">账户，请注意查收。</string>
+    <string name="butongyinghangdaozhang">不同银行到账速度略有不同，请耐心等待。</string>
+    <string name="fangkuanshibai">放款失败，请联系客服</string>
+    <string name="daozhangjine">到账金额(元)</string>
+    <string name="chakanxiangqing">查看详情</string>
+    <string name="shenqingzhanqi">申请展期</string>
+    <string name="yinghuanjine_yuan">应还金额(元)</string>
+    <string name="huankuanchulizhong">还款处理中，请稍候...</string>
+    <string name="bufenhuankuan_loading">部分还款中，请稍后...</string>
+    <string name="zhanqijine_vnd">展期金额（VND）</string>
+    <string name="zhanqitianshu_tian">展期天数（天）</string>
+    <string name="zhanqi_loading">展期处理中，请稍候...</string>
+    <string name="jianmianjine_vnd">减免金额（VND）</string>
+    <string name="jianmian_loading">还款减免处理中，请稍候...</string>
+    <string name="edubugou_hint1">你的额度不够，当前没有合适的借款产品，</string>
+    <string name="edubugou_hint2">请稍后再来或者</string>
+    <string name="wurenzheng">暂无该认证！</string>
+    <string name="sms_aleg_dialog">认证必须上传短信记录，我们将严格保护你的隐私</string>
+    <string name="zhengzaijiazai">正在下载新版本</string>
+    <string name="faxianxinbanben">发现新版本</string>
+    <string name="shifoulijigengxin">是否立即更新？</string>
+    <string name="tijiaochenggong">提交成功</string>
+    <string name="jinkuaishenhe">欢迎使用\n我们将尽快审核您的申请</string>
+    <string name="shenfenzheng_xianzhi">身份证号为9位或12位！</string>
+    <string name="jingjilianxiren_xianzhi">联系人手机号需为10位，请重新选择！</string>
+    <string name="yinghangkaleixing">银行卡类型</string>
+    <string name="yinghangzhanghao">银行账号</string>
+    <string name="wupipei_title">尊敬的申请人，您的额度不足，没有匹配的产品，</string>
+    <string name="qing">请</string>
+    <string name="qingxianrenzhengshangyige">请先认证上一个认证项</string>
+
+
+</resources>
