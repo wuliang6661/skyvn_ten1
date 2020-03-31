@@ -407,5 +407,7 @@
     <string name="wupipei_title">尊敬的申请人，您的额度不足，没有匹配的产品，</string>
     <string name="qing">请</string>
     <string name="qingxianrenzhengshangyige">请先认证上一个认证项</string>
+    <string name="buzhichigaishipin">不支持该视频，请重新拍摄！</string>
+    <string name="weikaiqishexiangtouquanxian">未开启摄像头或相册权限,请手动到设置去开启权限</string>
 
 </resources>

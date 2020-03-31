@@ -216,7 +216,7 @@
     <string name="fangqishenqing">放弃申请</string>
 
     <string name="jine">金额</string>
-    <string name="yuan">（元）</string>
+    <string name="yuan">（VND）</string>
     <string name="qixian">期限</string>
     <string name="tian">（天）</string>
 
@@ -235,7 +235,7 @@
     <string name="jiekuan_jine">借款金额</string>
     <string name="jiekuan_qixian">借款期限</string>
 
-    <string name="danwei_yuan">元</string>
+    <string name="danwei_yuan">VND</string>
     <string name="danwei_tian">天</string>
 
     <string name="jiekuandaozhang">借款到账</string>
@@ -351,7 +351,7 @@
     <string name="liaojiegengduo">了解更多</string>
     <string name="wushuju">无数据！</string>
 
-    <string name="kejiejineyuan">可借金额(元)</string>
+    <string name="kejiejineyuan">可借金额(VND)</string>
     <string name="shouxinqixianshengyu">授信期限剩余：</string>
     <string name="xiangjiejitian">想借几天</string>
     <string name="home_attention_hint1">只要1分钟完成认证，秒得额度</string>
@@ -381,10 +381,10 @@
     <string name="fangkuan_yinghang2">账户，请注意查收。</string>
     <string name="butongyinghangdaozhang">不同银行到账速度略有不同，请耐心等待。</string>
     <string name="fangkuanshibai">放款失败，请联系客服</string>
-    <string name="daozhangjine">到账金额(元)</string>
+    <string name="daozhangjine">到账金额(VND)</string>
     <string name="chakanxiangqing">查看详情</string>
     <string name="shenqingzhanqi">申请展期</string>
-    <string name="yinghuanjine_yuan">应还金额(元)</string>
+    <string name="yinghuanjine_yuan">应还金额(VND)</string>
     <string name="huankuanchulizhong">还款处理中，请稍候...</string>
     <string name="bufenhuankuan_loading">部分还款中，请稍后...</string>
     <string name="zhanqijine_vnd">展期金额（VND）</string>
@@ -408,4 +408,6 @@
     <string name="wupipei_title">尊敬的申请人，您的额度不足，没有匹配的产品，</string>
     <string name="qing">请</string>
     <string name="qingxianrenzhengshangyige">请先认证上一个认证项</string>
+    <string name="buzhichigaishipin">不支持该视频，请重新拍摄！</string>
+    <string name="weikaiqishexiangtouquanxian">未开启摄像头或相册权限,请手动到设置去开启权限</string>
 </resources>

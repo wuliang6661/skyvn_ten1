@@ -1,6 +1,10 @@
 package com.skyvn.ten.view.main;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 
@@ -51,6 +55,7 @@ public class MainActivity extends BaseActivity {
         buttms = new BottmTabItem[]{main1, main2, main3};
         showTuijian();
         getSaasKey();
+        requestPermission();
     }
 
 
@@ -229,5 +234,27 @@ public class MainActivity extends BaseActivity {
         return super.onKeyUp(keyCode, event);
     }
 
+
+    private void requestPermission() {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                    }, 1);
+
+        }
+    }
 
 }

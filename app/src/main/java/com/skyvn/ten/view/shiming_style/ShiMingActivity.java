@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -27,6 +28,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.view.TimePickerView;
@@ -287,8 +289,9 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
     }
 
 
+
     //获取权限
-    private void getPermission() {
+    private boolean getPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
@@ -299,31 +302,53 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
                             Manifest.permission.WRITE_EXTERNAL_STORAGE,
                             Manifest.permission.CAMERA
                     }, 1);
-
+            return false;
+        } else {
+            return true;
         }
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1://刚才的识别码
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {//用户同意权限,执行我们的操作
+//                    goPhotoAlbum();
+                } else {//用户拒绝之后,当然我们也可以弹出一个窗口,直接跳转到系统设置页面
+                    Toast.makeText(this, R.string.weikaiqishexiangtouquanxian, Toast.LENGTH_LONG).show();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+
     //激活相册操作
     private void goPhotoAlbum() {
-        getPermission();
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, 2);
+        if (getPermission()) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, 2);
+        }
     }
 
     //激活相机操作
     private void goCamera() {
-        getPermission();
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            uri = FileProvider.getUriForFile(Objects.requireNonNull(this), "com.skyvn.ten.fileprovider", cameraSavePath);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        } else {
-            uri = Uri.fromFile(cameraSavePath);
+        if (getPermission()) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                uri = FileProvider.getUriForFile(Objects.requireNonNull(this), "com.skyvn.ten.fileprovider", cameraSavePath);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            } else {
+                uri = Uri.fromFile(cameraSavePath);
+            }
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+            startActivityForResult(intent, 1);
         }
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        startActivityForResult(intent, 1);
     }
 
 

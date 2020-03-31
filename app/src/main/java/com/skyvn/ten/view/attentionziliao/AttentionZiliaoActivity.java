@@ -3,6 +3,7 @@ package com.skyvn.ten.view.attentionziliao;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -162,7 +163,7 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
                 return;
             }
             if (isFirst(position)) {
-                goAttention(typeBOS.get(position).getCode());
+                goAttention(typeBOS.get(position).getCode(), typeBOS.get(position).getNeedStatus());
             }
         });
         recycleView.setAdapter(adapter);
@@ -181,30 +182,30 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
         return true;
     }
 
-    private void goAttention(String code) {
+    private void goAttention(String code, int needStatus) {
         switch (code) {
             case AuthenticationUtils.PERSON_MSG:   //个人资料
                 if (IConstant.STYLE == 1) {
-                    gotoActivity(PersonMsgActivity.class, false);
+                    gotoActivity(PersonMsgActivity.class, needStatus);
                 } else {
-                    gotoActivity(PersonMsgActivity2.class, false);
+                    gotoActivity(PersonMsgActivity2.class, needStatus);
                 }
                 break;
             case AuthenticationUtils.ID_CARD:  //身份证验证
                 if (IConstant.STYLE == 1) {
-                    gotoActivity(ShiMingActivity.class, false);
+                    gotoActivity(ShiMingActivity.class, needStatus);
                 } else {
-                    gotoActivity(ShiMingActivity2.class, false);
+                    gotoActivity(ShiMingActivity2.class, needStatus);
                 }
                 break;
             case AuthenticationUtils.LIVE_PAGE:  // 活体验证
-                gotoActivity(LiveAttentionActivity.class, false);
+                gotoActivity(LiveAttentionActivity.class, needStatus);
                 break;
             case AuthenticationUtils.CONTACT_PAGE:  // 紧急联系人验证
-                gotoActivity(EmergencyContactActivity.class, false);
+                gotoActivity(EmergencyContactActivity.class, needStatus);
                 break;
             case AuthenticationUtils.DEVICE_PAGE:  // 驾照验证
-                gotoActivity(JiaZhaoActivity.class, false);
+                gotoActivity(JiaZhaoActivity.class, needStatus);
                 break;
             case AuthenticationUtils.PHONE_COMMON: // 运营商验证
                 showToast(getString(R.string.wurenzheng));
@@ -213,21 +214,31 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
                 requestPermission();
                 break;
             case AuthenticationUtils.BIND_BANK_CARD:  // 绑定银行卡验证
-                gotoActivity(BindBankCardActivity.class, false);
+                gotoActivity(BindBankCardActivity.class, needStatus);
                 break;
             case AuthenticationUtils.SMS__JILU_PAGE:  //短信记录验证
                 requestSmsPermission();
                 break;
             case AuthenticationUtils.SMS_PAGE:   //1414短信验证
-                gotoActivity(Msg14Activity.class, false);
+                gotoActivity(Msg14Activity.class, needStatus);
                 break;
             case AuthenticationUtils.VIDEO_PAGE:  //手持身份证小视频
-                gotoActivity(VideoActivity.class, false);
+                gotoActivity(VideoActivity.class, needStatus);
                 break;
             case AuthenticationUtils.COMMON_MSG_PAGE:  // 公司资料验证
-                gotoActivity(CommonMsgActivity.class, false);
+                gotoActivity(CommonMsgActivity.class, needStatus);
                 break;
         }
+    }
+
+
+    /**
+     * 常用的跳转方法
+     */
+    public void gotoActivity(Class<?> cls, int needSourss) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra("needStatus", needSourss);
+        startActivity(intent);
     }
 
 

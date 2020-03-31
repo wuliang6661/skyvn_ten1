@@ -383,4 +383,10 @@ public interface HttpService {
     @GET("/tenantInfo/getTenantActiveKey")
     Observable<BaseResult<LiveKeyBO>> getSaaSActiveKey();
 
+    /**
+     * 获取用户信息
+     */
+    @GET("/clientUser/getClientInfo")
+    Observable<BaseResult<LoginSuressBO>> getUserInfo();
+
 }

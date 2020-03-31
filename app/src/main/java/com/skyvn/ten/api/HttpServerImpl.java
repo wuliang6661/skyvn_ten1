@@ -564,4 +564,11 @@ public class HttpServerImpl {
     public static Observable<LiveKeyBO> getSaaSActiveKey() {
         return getService().getSaaSActiveKey().compose(RxResultHelper.httpRusult());
     }
+
+    /**
+     * 获取用户信息
+     */
+    public static Observable<LoginSuressBO> getUserInfo() {
+        return getService().getUserInfo().compose(RxResultHelper.httpRusult());
+    }
 }

@@ -207,7 +207,10 @@ public class VideoActivity extends BaseActivity implements ActionSheet.OnActionS
              * 第三个参数 selectionArgs ： 查询条件的参数，相当于 ？。
              * 第四个参数 sortOrder ： 结果排序。
              */
-            assert uri != null;
+            if (uri == null){
+                showToast(getString(R.string.buzhichigaishipin));
+                return;
+            }
             Cursor cursor = cr.query(uri, null, null, null,null);
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
