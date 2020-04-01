@@ -290,7 +290,6 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
     }
 
 
-
     //获取权限
     private boolean getPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -464,10 +463,18 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
             @Override
             public void onSuccess(IdCardInfoBO s) {
                 stopProgress();
-                if(s != null){
+                if (s != null) {
                     editUserName.setText(s.getRealName());
                     editBirthday.setText(s.getBirthday());
-                    editSex.setText(s.getGender());
+                    if ("0".equals(s.getGender())) {
+                        editSex.setText(getString(R.string.nan));
+                    } else if ("1".equals(s.getGender())) {
+                        editSex.setText(getString(R.string.nv));
+                    } else if ("2".equals(s.getGender())) {
+                        editSex.setText(getString(R.string.qita));
+                    } else {
+                        editSex.setText("");
+                    }
                     editUserIdcard.setText(s.getIdCardNo());
                 }
             }
