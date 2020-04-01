@@ -468,10 +468,13 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
                     editBirthday.setText(s.getBirthday());
                     if ("0".equals(s.getGender())) {
                         editSex.setText(getString(R.string.nan));
+                        selectSex = 0;
                     } else if ("1".equals(s.getGender())) {
                         editSex.setText(getString(R.string.nv));
+                        selectSex = 1;
                     } else if ("2".equals(s.getGender())) {
                         editSex.setText(getString(R.string.qita));
+                        selectSex = 2;
                     } else {
                         editSex.setText("");
                     }
