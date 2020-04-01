@@ -41,6 +41,8 @@ public class SplashActivity extends BaseActivity {
                 if (!StringUtils.isEmpty(token)) {
                     MyApplication.token = token;
                     getUserInfo();
+                }else{
+                    gotoActivity(LoginActivity.class,true);
                 }
             }
         }, 2000);
@@ -57,7 +59,6 @@ public class SplashActivity extends BaseActivity {
                 MyApplication.userBO = s;
                 //清空任务栈确保当前打开activity为前台任务栈栈顶
                 Intent it = new Intent(SplashActivity.this, MainActivity.class);
-                it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(it);
                 finish();
             }

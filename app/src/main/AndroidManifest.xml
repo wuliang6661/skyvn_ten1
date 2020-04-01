@@ -44,7 +44,8 @@
 
         <activity
             android:name="com.skyvn.ten.view.SplashActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -56,4 +56,10 @@
         <item name="android:backgroundDimAmount">0.5</item>
     </style>
 
+
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/zuhu_splash</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
 </resources>
