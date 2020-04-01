@@ -78,11 +78,6 @@ public class LoginActivity extends BaseActivity {
         inputLayoutVerfication.setErrorEnabled(false);
         setListener();
 
-        String token = MyApplication.spUtils.getString("token");
-        if (!StringUtils.isEmpty(token)) {
-            MyApplication.token = token;
-            getUserInfo();
-        }
         requestPermission();
         checkPermissions();
         getCodeImg();
@@ -310,27 +305,7 @@ public class LoginActivity extends BaseActivity {
                 MyApplication.userBO = s;
                 MyApplication.token = s.getToken();
                 MyApplication.spUtils.put("token", s.getToken());
-                getUserInfo();
-            }
-
-            @Override
-            public void onFiled(String message) {
                 stopProgress();
-                showToast(message);
-            }
-        });
-    }
-
-
-    /**
-     * 获取用户信息
-     */
-    private void getUserInfo() {
-        HttpServerImpl.getUserInfo().subscribe(new HttpResultSubscriber<LoginSuressBO>() {
-            @Override
-            public void onSuccess(LoginSuressBO s) {
-                stopProgress();
-                MyApplication.userBO = s;
                 //清空任务栈确保当前打开activity为前台任务栈栈顶
                 Intent it = new Intent(LoginActivity.this, MainActivity.class);
                 it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
