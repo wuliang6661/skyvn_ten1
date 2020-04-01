@@ -68,7 +68,7 @@ public class MainActivity extends BaseActivity {
             public void onSuccess(LiveKeyBO s) {
                 MyApplication.LIVE_KEY = s.getSdkKey();
                 MyApplication.Secret_Key = s.getSecretKey();
-                GuardianLivenessDetectionSDK.init(getApplication(), MyApplication.LIVE_KEY, MyApplication.Secret_Key,
+                GuardianLivenessDetectionSDK.init(getApplication(), "7cec70f1679a5c3c", "728e65227bf25507",
                         Market.Vietnam);
             }
 

@@ -41,6 +41,7 @@ import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.base.BaseActivity;
 import com.skyvn.ten.bean.AttentionSourrssBO;
+import com.skyvn.ten.bean.IdCardInfoBO;
 import com.skyvn.ten.util.AuthenticationUtils;
 import com.skyvn.ten.util.PhotoFromPhotoAlbum;
 import com.skyvn.ten.util.TextChangedListener;
@@ -447,7 +448,36 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
             } else {
                 Glide.with(ShiMingActivity.this).load(idCardBackUrl).into(idCardBack);
             }
+            if (!StringUtils.isEmpty(idCardBackUrl) && !StringUtils.isEmpty(idCardFontUrl)) {
+                getIdcardInfo();
+            }
         }
     };
+
+
+    /**
+     * 识别身份证信息
+     */
+    private void getIdcardInfo() {
+        showProgress();
+        HttpServerImpl.getIdCardInfo(idCardFontUrl, idCardBackUrl).subscribe(new HttpResultSubscriber<IdCardInfoBO>() {
+            @Override
+            public void onSuccess(IdCardInfoBO s) {
+                stopProgress();
+                if(s != null){
+                    editUserName.setText(s.getRealName());
+                    editBirthday.setText(s.getBirthday());
+                    editSex.setText(s.getGender());
+                    editUserIdcard.setText(s.getIdCardNo());
+                }
+            }
+
+            @Override
+            public void onFiled(String message) {
+                showToast(message);
+                stopProgress();
+            }
+        });
+    }
 
 }

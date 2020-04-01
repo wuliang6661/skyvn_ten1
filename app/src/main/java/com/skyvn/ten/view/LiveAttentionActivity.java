@@ -124,7 +124,7 @@ public class LiveAttentionActivity extends BaseActivity {
                     String transactionId = LivenessResult.getTransactionId();
                     boolean success = LivenessResult.isSuccess();
                     String errorMsg = LivenessResult.getErrorMsg();
-                    LogUtils.e(errorMsg);
+                    LogUtils.e("transactionId == " + transactionId + "   errorMsg == " + errorMsg);
                     if (success) {
                         Bundle bundle = new Bundle();
                         bundle.putString("base64", livenessBitmap);
@@ -166,7 +166,7 @@ public class LiveAttentionActivity extends BaseActivity {
 
     public String[] getRequiredPermissions() {
         return new String[]{Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
+                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
     }
 
     @Override

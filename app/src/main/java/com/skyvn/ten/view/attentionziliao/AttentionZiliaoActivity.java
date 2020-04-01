@@ -145,8 +145,9 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
                         item_type.setText(getResources().getString(R.string.yiwancheng));
                         holder.getView(R.id.item_image).setVisibility(View.INVISIBLE);
                     } else {
-                        holder.getView(R.id.item_image).setVisibility(View.INVISIBLE);
-                        item_type.setVisibility(View.INVISIBLE);
+                        item_type.setTextColor(Color.parseColor("#FF6860"));
+                        item_type.setText(getResources().getString(R.string.weiwancheng));
+                        holder.getView(R.id.item_image).setVisibility(View.VISIBLE);
                     }
                 } else {
                     if (status == 0) {   //未完成
@@ -158,8 +159,9 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
                         item_type.setText(getResources().getString(R.string.yiwancheng));
                         holder.getView(R.id.item_image).setVisibility(View.INVISIBLE);
                     } else {
-                        holder.getView(R.id.item_image).setVisibility(View.INVISIBLE);
-                        item_type.setVisibility(View.INVISIBLE);
+                        item_type.setTextColor(Color.parseColor("#FF6860"));
+                        item_type.setText(getResources().getString(R.string.weiwancheng));
+                        holder.getView(R.id.item_image).setVisibility(View.VISIBLE);
                     }
                 }
             }
