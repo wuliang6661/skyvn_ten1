@@ -189,7 +189,8 @@
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/next_img" />
+                    android:src="@drawable/next_img"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

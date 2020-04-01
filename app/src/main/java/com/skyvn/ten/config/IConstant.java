@@ -22,17 +22,17 @@ public interface IConstant {
     /**
      * AppID
      */
-    String appid = "1243515447200206849";
+    String appid = "1244531720264044545";
 
     /**
      * 租户id
      */
-    String zuhuID = "1243514988580982785";
+    String zuhuID = "1244531543242592258";
 
     /**
      * 服务器接口地址
      */
-    String URL = "http://47.96.126.117:9986/";
+    String URL = "http://tta.fengyunv40.com/";
 
 //    app打包：
 //    百倍云：

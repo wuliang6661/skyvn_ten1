@@ -136,6 +136,11 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
         TextChangedListener.StringWatcher(editUserName);
+
+        editUserName.setEnabled(false);
+        editUserIdcard.setEnabled(false);
+        birthdayLayout.setEnabled(false);
+        sexLayout.setEnabled(false);
     }
 
 
@@ -466,17 +471,17 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
                 if (s != null) {
                     editUserName.setText(s.getRealName());
                     editBirthday.setText(s.getBirthday());
-                    if ("0".equals(s.getGender())) {
+                    selectSex = s.getGender();
+                    sexLayout.setEnabled(false);
+                    if (0 == s.getGender()) {
                         editSex.setText(getString(R.string.nan));
-                        selectSex = 0;
-                    } else if ("1".equals(s.getGender())) {
+                    } else if (1 == s.getGender()) {
                         editSex.setText(getString(R.string.nv));
-                        selectSex = 1;
-                    } else if ("2".equals(s.getGender())) {
+                    } else if (2 == s.getGender()) {
                         editSex.setText(getString(R.string.qita));
-                        selectSex = 2;
                     } else {
                         editSex.setText("");
+                        sexLayout.setEnabled(true);
                     }
                     editUserIdcard.setText(s.getIdCardNo());
                 }
