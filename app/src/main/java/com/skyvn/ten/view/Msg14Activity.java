@@ -276,4 +276,10 @@ public class Msg14Activity extends BaseActivity implements ActionSheet.OnActionS
             Glide.with(Msg14Activity.this).load(imageUrl).into(smsImage);
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
 }

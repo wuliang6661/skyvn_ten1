@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">大闸蟹</string>
+    <string name="app_name">红豆派</string>
 
     <string name="login_txt">登录</string>
     <string name="photo_hint">手机号</string>

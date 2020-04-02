@@ -349,4 +349,10 @@ public class VideoActivity extends BaseActivity implements ActionSheet.OnActionS
             videoImg.setImageBitmap(bitmap);
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
 }

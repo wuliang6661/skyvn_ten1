@@ -352,6 +352,11 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
         }).start();
     }
 
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
 
     @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
