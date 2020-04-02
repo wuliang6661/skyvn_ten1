@@ -179,14 +179,14 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
 
 
     private boolean isFirst(int position) {
-//        for (int i = 0; i < typeBOS.size(); i++) {
-//            if (i < position) {
-//                if (typeBOS.get(i).getNeedStatus() != 0 && typeBOS.get(i).getStatus() == 0) {   //必填未完成
-//                    showToast(getString(R.string.qingxianrenzhengshangyige));
-//                    return false;
-//                }
-//            }
-//        }
+        for (int i = 0; i < typeBOS.size(); i++) {
+            if (i < position) {
+                if (typeBOS.get(i).getNeedStatus() != 0 && typeBOS.get(i).getStatus() != 1) {   //必填未完成
+                    showToast(getString(R.string.qingxianrenzhengshangyige));
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
