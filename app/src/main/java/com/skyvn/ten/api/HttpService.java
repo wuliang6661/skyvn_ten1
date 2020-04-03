@@ -57,344 +57,344 @@ public interface HttpService {
     /**
      * 获取图片验证码
      */
-    @POST("/clientUser/getCodeImg")
+    @POST("clientUser/getCodeImg")
     Observable<BaseResult<CodeImgBO>> getCodeImg();
 
     /**
      * 获取短信验证码
      */
-    @POST("/clientUser/getVerificationCode")
+    @POST("clientUser/getVerificationCode")
     Observable<BaseResult<String>> getVerificationCode(@Body Map<String, Object> params);
 
     /**
      * 登录接口
      */
-    @POST("/clientUser/login")
+    @POST("clientUser/login")
     Observable<BaseResult<LoginSuressBO>> loginUser(@Body Map<String, Object> params);
 
     /**
      * 退出登录
      */
-    @POST("/clientUser/exit")
+    @POST("clientUser/exit")
     Observable<BaseResult<String>> exitLogin(@Body Map<String, Object> params);
 
     /**
      * 获取首页显示
      */
-    @GET("/index/index")
+    @GET("index/index")
     Observable<BaseResult<IndexBO>> getIndex();
 
     /**
      * 查询首页金额范围
      */
-    @GET("/operateApplicationSetting/getTenantAppHomeLoanAmount")
+    @GET("operateApplicationSetting/getTenantAppHomeLoanAmount")
     Observable<BaseResult<String>> getIndexPayFanwei();
 
     /**
      * 查询首页借款天数
      */
-    @GET("/operateApplicationSetting/getTenantAppHomeLoanDays")
+    @GET("operateApplicationSetting/getTenantAppHomeLoanDays")
     Observable<BaseResult<List<String>>> getDays();
 
     /**
      * 提交反馈
      */
-    @POST("/operateApplicationFeedback/addOperateApplicationFeedback")
+    @POST("operateApplicationFeedback/addOperateApplicationFeedback")
     Observable<BaseResult<String>> addOperateApplicationFeedback(@Body Map<String, Object> params);
 
     /**
      * 绑定银行卡
      */
-    @POST("/clientUserBankCard/addClientSmsRecordAuth")
+    @POST("clientUserBankCard/addClientSmsRecordAuth")
     Observable<BaseResult<AttentionSourrssBO>> bindBankCard(@Body Map<String, Object> params);
 
     /**
      * 获取银行卡
      */
-    @GET("/clientUserBankCard/getBankCard")
+    @GET("clientUserBankCard/getBankCard")
     Observable<BaseResult<BankCardBO>> getBankCard();
 
     /**
      * 获取认证项的认证状态
      */
-    @GET("/clientAuthStatus/getAuthList")
+    @GET("clientAuthStatus/getAuthList")
     Observable<BaseResult<List<AuthTypeBO>>> getAuthList();
 
     /**
      * 提交个人资料
      */
-    @POST("/clientUserInfo/addClientInfoAuthTwo")
+    @POST("clientUserInfo/addClientInfoAuthTwo")
     Observable<BaseResult<AttentionSourrssBO>> commitClientInfo(@Body Map<String, Object> params);
 
     /**
      * 提交个人资料2
      */
-    @POST("/clientUserIdcard/addClientInfoAuth")
+    @POST("clientUserIdcard/addClientInfoAuth")
     Observable<BaseResult<AttentionSourrssBO>> addClientInfoAuth(@Body Map<String, Object> params);
 
     /**
      * 身份证验证(实名认证2)
      */
-    @POST("/clientUserIdcard/addClientIdcardAuth")
+    @POST("clientUserIdcard/addClientIdcardAuth")
     Observable<BaseResult<AttentionSourrssBO>> addClientIdcardAuth(@Body Map<String, Object> params);
 
 
     /**
      * 实名认证资料
      */
-    @POST("/clientUserIdcard/addClientIdcardAuthTwo")
+    @POST("clientUserIdcard/addClientIdcardAuthTwo")
     Observable<BaseResult<AttentionSourrssBO>> commitIdCard(@Body Map<String, Object> params);
 
     /**
      * 提交公司信息
      */
-    @POST("/clientUserInfo/addCompanyInfoAuth")
+    @POST("clientUserInfo/addCompanyInfoAuth")
     Observable<BaseResult<AttentionSourrssBO>> commitCompanyInfo(@Body Map<String, Object> params);
 
     /**
      * 提交驾照信息
      */
-    @POST("/clientDrivingLicense/addDrivingLicenseAuth")
+    @POST("clientDrivingLicense/addDrivingLicenseAuth")
     Observable<BaseResult<AttentionSourrssBO>> commitJiaZhaoInfo(@Body Map<String, Object> params);
 
     /**
      * 提交短信1414信息
      */
-    @POST("/clientSms1414/addClientSms1414Auth")
+    @POST("clientSms1414/addClientSms1414Auth")
     Observable<BaseResult<AttentionSourrssBO>> addClientSms1414(@Body Map<String, Object> params);
 
     /**
      * 提交小视频认证
      */
-    @POST("/clientIdcardVideo/addIdcardVideoAuth")
+    @POST("clientIdcardVideo/addIdcardVideoAuth")
     Observable<BaseResult<AttentionSourrssBO>> addVideoInfo(@Body Map<String, Object> params);
 
     /**
      * 提交紧急联系人认证
      */
-    @POST("/clientUserContact/addClientContactAuth")
+    @POST("clientUserContact/addClientContactAuth")
     Observable<BaseResult<AttentionSourrssBO>> addClientContactInfo(@Body Map<String, Object> params);
 
     /**
      * 提交通讯录认证
      */
-    @POST("/clientAddressList/addClientAddressListAuth")
+    @POST("clientAddressList/addClientAddressListAuth")
     Observable<BaseResult<AttentionSourrssBO>> addContactListInfo(@Body Map<String, Object> params);
 
     /**
      * 短信记录认证
      */
-    @POST("/clientSmsRecord/addClientSmsRecordAuth")
+    @POST("clientSmsRecord/addClientSmsRecordAuth")
     Observable<BaseResult<AttentionSourrssBO>> addClientSmsRecordAuth(@Body Map<String, Object> params);
 
     /**
      * 提交活体检测认证
      */
-    @POST("/clientActive/addClientActiveAuth")
+    @POST("clientActive/addClientActiveAuth")
     Observable<BaseResult<AttentionSourrssBO>> addClientActiveAuth(@Body Map<String, Object> params);
 
     /**
      * 去认证的接口
      */
-    @GET("/clientAuthStatus/getFirstAuth")
+    @GET("clientAuthStatus/getFirstAuth")
     Observable<BaseResult<AttentionSourrssBO>> getFirstAuth();
 
     /**
      * 获取返回的文案信息
      */
-    @GET("/operateApplicationAuthProcess/getCopyWriter")
+    @GET("operateApplicationAuthProcess/getCopyWriter")
     Observable<BaseResult<String>> getCopyWriter(@Query("code") String code);
 
     /**
      * 跳过
      */
-    @GET("/clientAuthStatus/getJumpAuth")
+    @GET("clientAuthStatus/getJumpAuth")
     Observable<BaseResult<AttentionSourrssBO>> JumpAuth(@Query("code") String code);
 
     /**
      * 获取枚举数据
      */
-    @GET("/tenantLabel/getTenantLabelsByParentId")
+    @GET("tenantLabel/getTenantLabelsByParentId")
     Observable<BaseResult<List<LablesBO>>> getSysLabels(@Query("parentId") String parentId);
 
     /**
      * 获取所有银行
      */
-    @GET("/sysBank/getSysBanks")
+    @GET("sysBank/getSysBanks")
     Observable<BaseResult<List<BankBO>>> getSysBanks();
 
     /**
      * 获取全部客服
      */
-    @GET("/tenantCustomerService/getTenantCustomerServices")
+    @GET("tenantCustomerService/getTenantCustomerServices")
     Observable<BaseResult<List<KeFuBO>>> getCustomerServicesByApplicationId();
 
     /**
      * 上传文件
      */
     @Multipart
-    @POST("/upload/uploadFile")
+    @POST("upload/uploadFile")
     Observable<BaseResult<String>> updateFile(@Part MultipartBody.Part file);
 
     /**
      * 获取首页banner
      */
-    @GET("/operateApplicationBanner/getOperateApplicationBanner")
+    @GET("operateApplicationBanner/getOperateApplicationBanner")
     Observable<BaseResult<BannerBO>> getHomeBanner();
 
     /**
      * 查询推荐页面是否显示
      */
-    @GET("/operateApplicationSetting/getAppRecommend")
+    @GET("operateApplicationSetting/getAppRecommend")
     Observable<BaseResult<String>> getAppRecommend();
 
     /**
      * 查询产品
      */
-    @GET("/orderProduct/getOrderProduct")
+    @GET("orderProduct/getOrderProduct")
     Observable<BaseResult<OrderDetailsBO>> getOrderProduct();
 
     /**
      * 确认借款
      */
-    @POST("/orderLoan/confirm")
+    @POST("orderLoan/confirm")
     Observable<BaseResult<String>> confirm(@Body Map<String, Object> params);
 
     /**
      * 获取全部轮播图
      */
-    @GET("/operateApplicationCarousel/getCarouselsByApplicationId")
+    @GET("operateApplicationCarousel/getCarouselsByApplicationId")
     Observable<BaseResult<List<BannerBO>>> getHomeCarouse();
 
     /**
      * 获取推荐广告图片
      */
-    @GET("/recommend/getRecommend")
+    @GET("recommend/getRecommend")
     Observable<BaseResult<RecommendBO>> getRecommendImg();
 
 
     /**
      * 获取公告列表
      */
-    @GET("/operateApplicationNotice/getNoticeListByApplicationId")
+    @GET("operateApplicationNotice/getNoticeListByApplicationId")
     Observable<BaseResult<List<GongGaoBO>>> getNoticeList();
 
     /**
      * 获取公告不翻页
      */
-    @GET("/operateApplicationNotice/getNotices")
+    @GET("operateApplicationNotice/getNotices")
     Observable<BaseResult<List<GongGaoBO>>> getNotices();
 
     /**
      * 获取金额和期限列表
      */
-    @GET("/operateApplicationSetting/getNoticeListByApplicationId")
+    @GET("operateApplicationSetting/getNoticeListByApplicationId")
     Observable<BaseResult<List<String>>> getPayNumOrDays(@Query("code") String code);
 
     /**
      * 查询当天提交的订单
      */
-    @GET("/orderApply/getMyApply")
+    @GET("orderApply/getMyApply")
     Observable<BaseResult<StatusBO>> getMyApply();
 
     /**
      * 提交客户申请
      */
-    @POST("/orderApply/addOrderApply")
+    @POST("orderApply/addOrderApply")
     Observable<BaseResult<Object>> addOrderApply(@Body Map<String, Object> params);
 
     /**
      * 查询待确认订单
      */
-    @GET("/orderLoan/getMyConfirmLoan")
+    @GET("orderLoan/getMyConfirmLoan")
     Observable<BaseResult<OrderBO>> getMyConfirmLoan(@Query("pageNum") int pageNum, @Query("pageSize") int pageSize);
 
     /**
      * 查询已结束订单
      */
-    @GET("/orderLoan/getMyEndLoan")
+    @GET("orderLoan/getMyEndLoan")
     Observable<BaseResult<OrderBO>> getMyEndLoan(@Query("pageNum") int pageNum, @Query("pageSize") int pageSize);
 
     /**
      * 查询待还款订单
      */
-    @GET("/orderLoan/getMyRepayLoan")
+    @GET("orderLoan/getMyRepayLoan")
     Observable<BaseResult<OrderBO>> getMyRepayLoan(@Query("pageNum") int pageNum, @Query("pageSize") int pageSize);
 
     /**
      * 查询订单详情
      */
-    @GET("/orderLoan/getMyLoan")
+    @GET("orderLoan/getMyLoan")
     Observable<BaseResult<OrderDetailsBO>> getMyLoan(@Query("id") String id);
 
     /**
      * 查询还款流水
      */
-    @GET("/orderLoanRepaySerial/getMyRepaySerial")
+    @GET("orderLoanRepaySerial/getMyRepaySerial")
     Observable<BaseResult<HuanKuanBO>> getMyRepaySerial(@Query("orderId") String orderId, @Query("pageNum") String pageNum,
                                                         @Query("pageSize") String pageSize);
 
     /**
      * 查询租户收款账户
      */
-    @GET("/tenantGatheringAccount/getTenantGatheringAccounts")
+    @GET("tenantGatheringAccount/getTenantGatheringAccounts")
     Observable<BaseResult<List<AccountBO>>> getUserPayNums(@Query("tenantId") String tenantId);
 
     /**
      * 查询租户客服
      */
-    @GET("/tenantCustomerService/getTenantCustomerServices")
+    @GET("tenantCustomerService/getTenantCustomerServices")
     Observable<BaseResult<List<KeFuBO>>> getUserContact(@Query("tenantId") String tenantId);
 
 
     /**
      * 再借一次
      */
-    @POST("/orderLoan/loanAgain")
+    @POST("orderLoan/loanAgain")
     Observable<BaseResult<String>> loanAgain(@Body Map<String, Object> params);
 
 
     /**
      * 获取Oss配置
      */
-    @GET("/ossInfo/getOssInfo")
+    @GET("ossInfo/getOssInfo")
     Observable<BaseResult<StsTokenBean>> getOssInfo(@Query("type") String type, @Query("key") String key);
 
     /**
      * 确认提现
      */
-    @POST("/orderLoan/withdraw")
+    @POST("orderLoan/withdraw")
     Observable<BaseResult<String>> withDraw(@Body Map<String, Object> params);
 
     /**
      * 查询最后订单
      */
-    @GET("/orderLoan/getMyLastLoan")
+    @GET("orderLoan/getMyLastLoan")
     Observable<BaseResult<OrderDetailsBO>> getMyLastLoan();
 
     /**
      * 检查更新
      */
-    @GET("/operateApplication/getForceUpdate")
+    @GET("operateApplication/getForceUpdate")
     Observable<BaseResult<VersionBO>> checkUpdate();
 
     /**
      * 获取活体密钥
      */
-    @GET("/tenantInfo/getTenantActiveKey")
+    @GET("tenantInfo/getTenantActiveKey")
     Observable<BaseResult<LiveKeyBO>> getSaaSActiveKey();
 
     /**
      * 获取用户信息
      */
-    @GET("/clientUser/getClientInfo")
+    @GET("clientUser/getClientInfo")
     Observable<BaseResult<LoginSuressBO>> getUserInfo();
 
 
     /**
      * 获取身份证信息
      */
-    @GET("/clientUserIdcard/getIdCardInfo")
+    @GET("clientUserIdcard/getIdCardInfo")
     Observable<BaseResult<IdCardInfoBO>> getIdCardInfo(@Query("idCardBackOssUrl") String idCardBackOssUrl,
                                                        @Query("idCardFrontOssUrl") String idCardFrontOssUrl);
 }
