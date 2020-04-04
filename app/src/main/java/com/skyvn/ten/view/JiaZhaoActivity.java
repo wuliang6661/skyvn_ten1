@@ -280,7 +280,6 @@ public class JiaZhaoActivity extends BaseActivity implements ActionSheet.OnActio
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 if (imageType == 1) {
                     imageUrl1 = s;
                 } else {
@@ -291,7 +290,7 @@ public class JiaZhaoActivity extends BaseActivity implements ActionSheet.OnActio
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -310,10 +309,18 @@ public class JiaZhaoActivity extends BaseActivity implements ActionSheet.OnActio
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (imageType == 1) {
-                Glide.with(JiaZhaoActivity.this).load(imageUrl1).into(zhengmianImg);
-            } else {
-                Glide.with(JiaZhaoActivity.this).load(imageUrl2).into(fanmianImg);
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    if (imageType == 1) {
+                        Glide.with(JiaZhaoActivity.this).load(imageUrl1).into(zhengmianImg);
+                    } else {
+                        Glide.with(JiaZhaoActivity.this).load(imageUrl2).into(fanmianImg);
+                    }
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
             }
         }
     };

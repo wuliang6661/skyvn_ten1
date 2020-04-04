@@ -298,7 +298,6 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 if (selectIdCardType == 0) {
                     idCardFontUrl = s;
                 } else {
@@ -309,7 +308,7 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -322,10 +321,18 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (selectIdCardType == 0) {
-                Glide.with(ShiMingActivity2.this).load(idCardFontUrl).into(idCardFont);
-            } else {
-                Glide.with(ShiMingActivity2.this).load(idCardBackUrl).into(idCardBack);
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    if (selectIdCardType == 0) {
+                        Glide.with(ShiMingActivity2.this).load(idCardFontUrl).into(idCardFont);
+                    } else {
+                        Glide.with(ShiMingActivity2.this).load(idCardBackUrl).into(idCardBack);
+                    }
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
             }
         }
     };

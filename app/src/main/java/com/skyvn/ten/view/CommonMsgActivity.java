@@ -381,14 +381,13 @@ public class CommonMsgActivity extends BaseActivity implements ActionSheet.OnAct
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 gongsiImgUrl = s;
                 handler.sendEmptyMessage(0x11);
             }
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -401,7 +400,15 @@ public class CommonMsgActivity extends BaseActivity implements ActionSheet.OnAct
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            Glide.with(CommonMsgActivity.this).load(gongsiImgUrl).into(gongsiImg);
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    Glide.with(CommonMsgActivity.this).load(gongsiImgUrl).into(gongsiImg);
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
+            }
         }
     };
 

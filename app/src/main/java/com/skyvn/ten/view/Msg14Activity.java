@@ -253,14 +253,13 @@ public class Msg14Activity extends BaseActivity implements ActionSheet.OnActionS
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 imageUrl = s;
                 handler.sendEmptyMessage(0x11);
             }
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -273,7 +272,15 @@ public class Msg14Activity extends BaseActivity implements ActionSheet.OnActionS
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            Glide.with(Msg14Activity.this).load(imageUrl).into(smsImage);
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    Glide.with(Msg14Activity.this).load(imageUrl).into(smsImage);
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
+            }
         }
     };
 

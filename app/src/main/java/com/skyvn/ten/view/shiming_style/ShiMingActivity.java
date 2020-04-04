@@ -423,7 +423,6 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 if (selectIdCardType == 0) {
                     idCardFontUrl = s;
                 } else {
@@ -434,7 +433,7 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -447,13 +446,21 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (selectIdCardType == 0) {
-                Glide.with(ShiMingActivity.this).load(idCardFontUrl).into(idCardFont);
-            } else {
-                Glide.with(ShiMingActivity.this).load(idCardBackUrl).into(idCardBack);
-            }
-            if (!StringUtils.isEmpty(idCardBackUrl) && !StringUtils.isEmpty(idCardFontUrl)) {
-                getIdcardInfo();
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    if (selectIdCardType == 0) {
+                        Glide.with(ShiMingActivity.this).load(idCardFontUrl).into(idCardFont);
+                    } else {
+                        Glide.with(ShiMingActivity.this).load(idCardBackUrl).into(idCardBack);
+                    }
+                    if (!StringUtils.isEmpty(idCardBackUrl) && !StringUtils.isEmpty(idCardFontUrl)) {
+                        getIdcardInfo();
+                    }
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
             }
         }
     };

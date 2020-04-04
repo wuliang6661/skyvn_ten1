@@ -17,6 +17,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import com.skyvn.ten.bean.ContactBO;
 import com.skyvn.ten.bean.SmsBO;
 import com.skyvn.ten.config.IConstant;
 import com.skyvn.ten.mvp.MVPBaseActivity;
+import com.skyvn.ten.util.AppManager;
 import com.skyvn.ten.util.AuthenticationUtils;
 import com.skyvn.ten.util.SMSUtils;
 import com.skyvn.ten.util.UpdateFileUtils;
@@ -59,6 +61,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
@@ -72,6 +75,8 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
 
     @BindView(R.id.recycle_view)
     RecyclerView recycleView;
+    @BindView(R.id.back)
+    LinearLayout back;
 
     private List<AuthTypeBO> typeBOS;
 
@@ -85,7 +90,7 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        goBack();
+        back.setVisibility(View.VISIBLE);
         setTitleText(getResources().getString(R.string.renzhengziliao));
         rightButton();
 
@@ -98,6 +103,12 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
     protected void onResume() {
         super.onResume();
         getAuthList();
+    }
+
+
+    @OnClick(R.id.back)
+    public void back() {
+        AppManager.getAppManager().goHome();
     }
 
     /**
@@ -179,14 +190,14 @@ public class AttentionZiliaoActivity extends MVPBaseActivity<AttentionZiliaoCont
 
 
     private boolean isFirst(int position) {
-        for (int i = 0; i < typeBOS.size(); i++) {
-            if (i < position) {
-                if (typeBOS.get(i).getNeedStatus() != 0 && typeBOS.get(i).getStatus() != 1) {   //必填未完成
-                    showToast(getString(R.string.qingxianrenzhengshangyige));
-                    return false;
-                }
-            }
-        }
+//        for (int i = 0; i < typeBOS.size(); i++) {
+//            if (i < position) {
+//                if (typeBOS.get(i).getNeedStatus() != 0 && typeBOS.get(i).getStatus() != 1) {   //必填未完成
+//                    showToast(getString(R.string.qingxianrenzhengshangyige));
+//                    return false;
+//                }
+//            }
+//        }
         return true;
     }
 

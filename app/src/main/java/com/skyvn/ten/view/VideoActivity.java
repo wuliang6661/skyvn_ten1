@@ -326,14 +326,13 @@ public class VideoActivity extends BaseActivity implements ActionSheet.OnActionS
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 videoUrl = s;
                 handler.sendEmptyMessage(0x11);
             }
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -346,7 +345,15 @@ public class VideoActivity extends BaseActivity implements ActionSheet.OnActionS
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            videoImg.setImageBitmap(bitmap);
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    videoImg.setImageBitmap(bitmap);
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
+            }
         }
     };
 

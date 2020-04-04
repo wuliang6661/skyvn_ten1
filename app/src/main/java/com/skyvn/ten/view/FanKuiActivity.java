@@ -231,7 +231,6 @@ public class FanKuiActivity extends BaseActivity implements ActionSheet.OnAction
         utils.setListener(new UpdateFileUtils.OnCallBackListener() {
             @Override
             public void call(String s) {
-                stopProgress();
                 ImageBO imageBO = new ImageBO();
                 imageBO.url = s;
                 imageBOS.add(imageBO);
@@ -240,7 +239,7 @@ public class FanKuiActivity extends BaseActivity implements ActionSheet.OnAction
 
             @Override
             public void callError(String message) {
-                stopProgress();
+                handler.sendEmptyMessage(0x22);
                 showToast(message);
             }
         });
@@ -253,7 +252,15 @@ public class FanKuiActivity extends BaseActivity implements ActionSheet.OnAction
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            setImageAdapter();
+            switch (msg.what) {
+                case 0x11:
+                    stopProgress();
+                    setImageAdapter();
+                    break;
+                case 0x22:
+                    stopProgress();
+                    break;
+            }
         }
     };
 
