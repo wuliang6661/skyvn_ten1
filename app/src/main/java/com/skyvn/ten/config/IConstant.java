@@ -37,12 +37,12 @@ public interface IConstant {
     /**
      * AppID
      */
-    String appid = "1244531720264044545";
+    String appid = "1247072961388298241";
 
     /**
      * 租户id
      */
-    String zuhuID = "1244531543242592258";
+    String zuhuID = "1247044891616104449";
 
     /**
      * 服务器接口地址
