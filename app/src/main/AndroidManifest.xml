@@ -70,7 +70,9 @@
             android:launchMode="singleTask" />
 
         <!--客服-->
-        <activity android:name="com.skyvn.ten.view.KefuActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.KefuActivity"
+            android:launchMode="singleTask" />
 
         <!--我的银行卡-->
         <activity android:name="com.skyvn.ten.view.MyBankCardActivity" />

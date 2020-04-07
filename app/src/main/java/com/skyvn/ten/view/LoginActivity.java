@@ -1,7 +1,6 @@
 package com.skyvn.ten.view;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -307,10 +306,11 @@ public class LoginActivity extends BaseActivity {
                 MyApplication.spUtils.put("token", s.getToken());
                 stopProgress();
                 //清空任务栈确保当前打开activity为前台任务栈栈顶
-                Intent it = new Intent(LoginActivity.this, MainActivity.class);
-                it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(it);
-                finish();
+//                Intent it = new Intent(LoginActivity.this, MainActivity.class);
+//                it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(it);
+//                finish();
+                gotoActivity(MainActivity.class, true);
             }
 
             @Override
