@@ -448,7 +448,6 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
             super.handleMessage(msg);
             switch (msg.what) {
                 case 0x11:
-                    stopProgress();
                     if (selectIdCardType == 0) {
                         Glide.with(ShiMingActivity.this).load(idCardFontUrl).into(idCardFont);
                     } else {
@@ -456,10 +455,15 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
                     }
                     if (!StringUtils.isEmpty(idCardBackUrl) && !StringUtils.isEmpty(idCardFontUrl)) {
                         getIdcardInfo();
+                    } else {
+                        stopProgress();
                     }
                     break;
                 case 0x22:
                     stopProgress();
+                    break;
+                case 0x33:
+                    showProgress();
                     break;
             }
         }
@@ -470,7 +474,6 @@ public class ShiMingActivity extends BaseActivity implements ActionSheet.OnActio
      * 识别身份证信息
      */
     private void getIdcardInfo() {
-        showProgress();
         HttpServerImpl.getIdCardInfo(idCardFontUrl, idCardBackUrl).subscribe(new HttpResultSubscriber<IdCardInfoBO>() {
             @Override
             public void onSuccess(IdCardInfoBO s) {

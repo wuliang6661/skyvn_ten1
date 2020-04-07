@@ -124,7 +124,7 @@
             android:background="@null"
             android:gravity="center_vertical"
             android:hint="@string/yinghangzhanghao"
-            android:maxLength="50"
+            android:maxLength="16"
             android:singleLine="true"
             android:textColor="#000000"
             android:textColorHint="#888888"

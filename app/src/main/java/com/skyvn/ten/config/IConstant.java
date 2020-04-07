@@ -19,35 +19,35 @@ public interface IConstant {
     int STYLE = 1;
 
 
-//    /**
-//     * AppID
-//     */
-//    String appid = "1243515447200206849";
-//
-//    /**
-//     * 租户id
-//     */
-//    String zuhuID = "1243514988580982785";
-//
-//    /**
-//     * 服务器接口地址
-//     */
-//    String URL = "http://47.96.126.117:9986/";
-
     /**
      * AppID
      */
-    String appid = "1247072961388298241";
+    String appid = "1243515447200206849";
 
     /**
      * 租户id
      */
-    String zuhuID = "1247044891616104449";
+    String zuhuID = "1243514988580982785";
 
     /**
      * 服务器接口地址
      */
-    String URL = "http://tta.fengyunv40.com/tenant-app-api/";
+    String URL = "http://47.96.126.117:9986/tenant-app-api/";
+
+//    /**
+//     * AppID
+//     */
+//    String appid = "1247072961388298241";
+//
+//    /**
+//     * 租户id
+//     */
+//    String zuhuID = "1247044891616104449";
+//
+//    /**
+//     * 服务器接口地址
+//     */
+//    String URL = "http://tta.fengyunv40.com/tenant-app-api/";
 
 //    app打包：
 //    百倍云：

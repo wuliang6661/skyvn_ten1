@@ -579,4 +579,8 @@ public class HttpServerImpl {
     public static Observable<IdCardInfoBO> getIdCardInfo(String zhengmian, String beimian) {
         return getService().getIdCardInfo(beimian, zhengmian).compose(RxResultHelper.httpRusult());
     }
+
+    public static Observable<String> getRealName() {
+        return getService().getRealName().compose(RxResultHelper.httpRusult());
+    }
 }
