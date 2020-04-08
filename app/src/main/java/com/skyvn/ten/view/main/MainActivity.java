@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.skyvn.ten.R;
 import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
@@ -66,6 +67,10 @@ public class MainActivity extends BaseActivity {
         HttpServerImpl.getSaaSActiveKey().subscribe(new HttpResultSubscriber<LiveKeyBO>() {
             @Override
             public void onSuccess(LiveKeyBO s) {
+                if (s == null || StringUtils.isEmpty(s.getSdkKey()) || StringUtils.isEmpty(s.getSecretKey())) {
+                    showToast(getString(R.string.huotiqueshi));
+                    return;
+                }
                 MyApplication.LIVE_KEY = s.getSdkKey();
                 MyApplication.Secret_Key = s.getSecretKey();
 //                GuardianLivenessDetectionSDK.init(getApplication(), "7cec70f1679a5c3c", "728e65227bf25507",

