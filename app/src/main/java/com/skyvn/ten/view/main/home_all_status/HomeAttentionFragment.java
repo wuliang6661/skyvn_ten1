@@ -105,6 +105,14 @@ public class HomeAttentionFragment extends BaseFragment {
      * 设置界面显示
      */
     private void showIndex() {
+        if(indexBO.getLogin() == 0){  //未登录
+            hintLayout.setVisibility(View.GONE);
+            daysLayout.setVisibility(View.VISIBLE);
+            shouxinShengyuLayout.setVisibility(View.GONE);
+            btLogin.setText(getString(R.string.huoquwodeedu));
+            getPayNum();
+            return;
+        }
         switch (indexBO.getAuthStatus()) {   //认证状态
             case "0":   //未认证
                 hintLayout.setVisibility(View.GONE);

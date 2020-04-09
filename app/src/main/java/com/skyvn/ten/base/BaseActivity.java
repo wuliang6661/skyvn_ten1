@@ -92,7 +92,7 @@ public abstract class BaseActivity extends SupportActivity {
      * 显示加载进度弹窗
      */
     protected void showProgress() {
-        svProgressHUD.showWithStatus("加载中...", SVProgressHUD.SVProgressHUDMaskType.Black);
+        svProgressHUD.showWithStatus(getString(R.string.jiazaizhong), SVProgressHUD.SVProgressHUDMaskType.Black);
     }
 
     /**

@@ -228,6 +228,9 @@ public class ConfirmationActivity extends BaseActivity {
             showToast(getResources().getString(R.string.xieyi_hint));
             return;
         }
+        if (orderDetailsBO == null) {
+            return;
+        }
         HttpServerImpl.confirm(orderDetailsBO.getId()).subscribe(new HttpResultSubscriber<String>() {
             @Override
             public void onSuccess(String s) {

@@ -137,6 +137,11 @@ public class HomeAllFragment extends BaseFragment {
      * 显示不同的页面风格
      */
     private void showIndex() {
+        if(indexBO.getLogin() == 0){  //未登录
+            FragmentUtils.replace(getFragmentManager(),
+                    new HomeAttentionFragment(), R.id.fragment_home);
+            return;
+        }
         switch (indexBO.getAuthStatus()) {   //认证状态
             case "0":   //未认证
             case "1":   //认证中

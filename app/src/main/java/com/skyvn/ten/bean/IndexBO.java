@@ -21,6 +21,15 @@ public class IndexBO {
     private OrderLoanRepaySerialVOBean orderLoanRepaySerialVO;
     private OrderDetailsBO orderLoanVO;
     private String quota;
+    private int login;
+
+    public int getLogin() {
+        return login;
+    }
+
+    public void setLogin(int login) {
+        this.login = login;
+    }
 
     public String getAuthStatus() {
         return authStatus;

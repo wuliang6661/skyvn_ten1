@@ -417,5 +417,6 @@
     <string name="duanxin">短信</string>
     <string name="yuyan">语言</string>
     <string name="yirenzheng">已认证</string>
+    <string name="jiazaizhong">加载中...</string>
 
 </resources>

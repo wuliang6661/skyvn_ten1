@@ -57,7 +57,7 @@ public abstract class BaseFragment extends SupportFragment {
      * 显示加载进度弹窗
      */
     protected void showProgress() {
-        svProgressHUD.showWithStatus("加载中...", SVProgressHUD.SVProgressHUDMaskType.BlackCancel);
+        svProgressHUD.showWithStatus(getString(R.string.jiazaizhong), SVProgressHUD.SVProgressHUDMaskType.BlackCancel);
     }
 
     /**
