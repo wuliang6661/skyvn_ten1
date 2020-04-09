@@ -11,7 +11,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
 import com.blankj.utilcode.util.FileUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.google.gson.Gson;
 import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
@@ -280,7 +279,7 @@ public class AuthenticationUtils {
 
             @Override
             public void onFiled(String message) {
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
             }
         });
     }
@@ -388,7 +387,7 @@ public class AuthenticationUtils {
 
             @Override
             public void callError(String message) {
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
                 handler.sendEmptyMessage(0x22);
             }
         });
@@ -405,7 +404,7 @@ public class AuthenticationUtils {
 
             @Override
             public void onFiled(String message) {
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
                 handler.sendEmptyMessage(0x22);
             }
         });
@@ -444,7 +443,7 @@ public class AuthenticationUtils {
             @Override
             public void callError(String message) {
                 handler.sendEmptyMessage(0x22);
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
             }
         });
         utils.updateFile(3, filePath);
@@ -462,7 +461,7 @@ public class AuthenticationUtils {
             @Override
             public void onFiled(String message) {
                 handler.sendEmptyMessage(0x22);
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
             }
         });
     }

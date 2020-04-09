@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.skyvn.ten.R;
 import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
@@ -60,7 +59,7 @@ public class UpdateUtils {
 
             @Override
             public void onFiled(String message) {
-                ToastUtils.showShort(message);
+                ToastManager.showShort(message);
             }
         });
     }

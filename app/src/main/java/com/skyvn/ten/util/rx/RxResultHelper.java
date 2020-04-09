@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.skyvn.ten.R;
 import com.skyvn.ten.api.DialogCallException;
 import com.skyvn.ten.base.MyApplication;
 import com.skyvn.ten.bean.BaseResult;
 import com.skyvn.ten.util.AppManager;
+import com.skyvn.ten.util.ToastManager;
 import com.skyvn.ten.view.LoginActivity;
 
 import rx.Observable;
@@ -37,7 +37,7 @@ public class RxResultHelper {
                             return Observable.error(new RuntimeException(mDYResponse.getMsg()));
                         }
                         Intent intent = new Intent(activity, LoginActivity.class);
-                        ToastUtils.showShort(R.string.dengluguoqi);
+                        ToastManager.showShort(activity.getString(R.string.dengluguoqi));
                         AppManager.getAppManager().finishAllActivity();
                         activity.startActivity(intent);
                         return Observable.error(new RuntimeException(activity.getString(R.string.dengluguoqi)));
@@ -50,7 +50,7 @@ public class RxResultHelper {
                             return Observable.error(new RuntimeException(mDYResponse.getMsg()));
                         }
                         Intent intent = new Intent(activity, LoginActivity.class);
-                        ToastUtils.showShort(activity.getString(R.string.dengluguoqi));
+                        ToastManager.showShort(activity.getString(R.string.dengluguoqi));
                         AppManager.getAppManager().finishAllActivity();
                         activity.startActivity(intent);
                         return Observable.error(new RuntimeException(activity.getString(R.string.dengluguoqi)));

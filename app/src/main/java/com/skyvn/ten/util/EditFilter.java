@@ -3,8 +3,6 @@ package com.skyvn.ten.util;
 import android.text.InputFilter;
 import android.text.Spanned;
 
-import com.blankj.utilcode.util.ToastUtils;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,7 +20,7 @@ public class EditFilter implements InputFilter {
         if (!matcher.find()) {
             return null;
         } else {
-            ToastUtils.showShort("只能输入汉字,英文，数字");
+            ToastManager.showShort("只能输入汉字,英文，数字");
             return "";
         }
 
