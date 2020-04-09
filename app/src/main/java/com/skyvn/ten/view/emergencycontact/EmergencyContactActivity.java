@@ -223,6 +223,10 @@ public class EmergencyContactActivity extends MVPBaseActivity<EmergencyContactCo
             showToast(getResources().getString(R.string.wanshan_toast));
             return;
         }
+        if(strPhone1.equals(strPhone2)){
+            showToast(getString(R.string.lianxirenhaomabunengxiangtong));
+            return;
+        }
         HttpServerImpl.commitContactInfo(strName1, strName2, strPhone1, strPhone2,
                 selectGuanxi1, selectGuanxi2).subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
             @Override

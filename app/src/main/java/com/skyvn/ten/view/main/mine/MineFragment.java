@@ -62,15 +62,7 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if (MyApplication.userBO == null) {
-            userPhone.setText(R.string.weidenglu);
-            userImg.setImageResource(R.drawable.user_img_defalt);
-        } else {
-            userPhone.setText(MyApplication.userBO.getPhone());
-            Glide.with(getActivity()).load(MyApplication.userBO.getHeadPortrait())
-                    .error(R.drawable.person_defalt).
-                    placeholder(R.drawable.person_defalt).into(userImg);
-        }
+
     }
 
 
@@ -115,6 +107,25 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
     }
 
 
+    private void initAttention() {
+        HttpServerImpl.getFirstAuth().subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
+            @Override
+            public void onSuccess(AttentionSourrssBO s) {
+                if("-1".equals(s.getCode())){
+                    goAttention.setText(R.string.yirenzheng);
+                }else{
+                    goAttention.setText(R.string.qurenzheng);
+                }
+            }
+
+            @Override
+            public void onFiled(String message) {
+                showToast(message);
+            }
+        });
+    }
+
+
     @OnClick(R.id.btn_album)
     public void settingClick() {
         gotoActivity(SettingActivity.class, false);
@@ -137,6 +148,16 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
         //请在onSupportVisible实现沉浸式
         if (isImmersionBarEnabled()) {
             initImmersionBar();
+        }
+        initAttention();
+        if (MyApplication.userBO == null) {
+            userPhone.setText(R.string.weidenglu);
+            userImg.setImageResource(R.drawable.user_img_defalt);
+        } else {
+            userPhone.setText(MyApplication.userBO.getPhone());
+            Glide.with(getActivity()).load(MyApplication.userBO.getHeadPortrait())
+                    .error(R.drawable.person_defalt).
+                    placeholder(R.drawable.person_defalt).into(userImg);
         }
     }
 

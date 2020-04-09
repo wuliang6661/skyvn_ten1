@@ -45,9 +45,13 @@ public class RecommendNewFragment extends BaseFragment {
 
 
 //        List<Map<String, Object>> params = SMSUtils.obtainPhoneMessage(getActivity());
-        getRecommend();
     }
 
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+        getRecommend();
+    }
 
     private void getRecommend() {
         HttpServerImpl.getRemomImg().subscribe(new HttpResultSubscriber<RecommendBO>() {

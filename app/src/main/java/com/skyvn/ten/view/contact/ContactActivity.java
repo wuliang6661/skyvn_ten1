@@ -32,7 +32,6 @@ import com.skyvn.ten.widget.AlertDialog;
 import com.skyvn.ten.widget.lgrecycleadapter.LGRecycleViewAdapter;
 import com.skyvn.ten.widget.lgrecycleadapter.LGViewHolder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -190,44 +189,8 @@ public class ContactActivity extends MVPBaseActivity<ContactContract.View, Conta
                     }
                 });
                 recycleView.setAdapter(adapter);
-                if (type == 0) {
-                    new AlertDialog(ContactActivity.this).builder().setGone().setTitle(getResources().getString(R.string.tishi))
-                            .setMsg(getResources().getString(R.string.contact_aleg_dialog))
-                            .setNegativeButton(getResources().getString(R.string.buyunxu), null)
-                            .setPositiveButton(getResources().getString(R.string.hao), v -> {
-                                commitContactList(phones);
-                            }).show();
-                }
             }
         }, 1000);
     }
-
-
-    /**
-     * 上传通讯录验证
-     */
-    private void commitContactList(List<PhoneDto> phoneDtos) {
-        List<ContactBO> contactBOS = new ArrayList<>();
-        for (PhoneDto phone : phoneDtos) {
-            ContactBO contactBO = new ContactBO();
-            contactBO.setPhone(phone.getTelPhone());
-            contactBO.setName(phone.getName());
-            contactBOS.add(contactBO);
-        }
-//        HttpServerImpl.commitContactList(contactBOS).subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
-//            @Override
-//            public void onSuccess(AttentionSourrssBO s) {
-//                showToast(getResources().getString(R.string.commit_sourss_toast));
-//                AuthenticationUtils.goAuthNextPage(s.getCode(), s.getNeedStatus(), ContactActivity.this);
-//
-//            }
-//
-//            @Override
-//            public void onFiled(String message) {
-//                showToast(message);
-//            }
-//        });
-    }
-
 
 }

@@ -135,6 +135,7 @@ public class BindBankCardActivity extends MVPBaseActivity<BindBankCardContract.V
             public void onFiled(String message) {
                 stopProgress();
                 showToast(message);
+                finish();
             }
         });
     }

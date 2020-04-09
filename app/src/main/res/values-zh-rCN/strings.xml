@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">红豆</string>
+    <string name="app_name">小樱桃</string>
 
     <string name="login_txt">登录</string>
     <string name="photo_hint">手机号</string>
@@ -411,4 +411,9 @@
     <string name="buzhichigaishipin">不支持该视频，请重新拍摄！</string>
     <string name="weikaiqishexiangtouquanxian">未开启摄像头或相册权限,请手动到设置去开启权限</string>
     <string name="huotiqueshi">活体认证初始化key缺失！</string>
+    <string name="lianxirenhaomabunengxiangtong">联系人号码不能相同！</string>
+    <string name="dengluguoqi">登录已过期，请重新登录！</string>
+    <string name="duanxin">短信</string>
+    <string name="yuyan">语言</string>
+    <string name="yirenzheng">已认证</string>
 </resources>

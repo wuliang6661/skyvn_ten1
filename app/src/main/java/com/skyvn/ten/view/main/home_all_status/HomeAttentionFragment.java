@@ -94,6 +94,10 @@ public class HomeAttentionFragment extends BaseFragment {
 
     @OnClick(R.id.kefu_layout)
     public void clickKefu() {
+        if (StringUtils.isEmpty(MyApplication.token)) {
+            gotoActivity(LoginActivity.class, false);
+            return;
+        }
         gotoActivity(KefuActivity.class, false);
     }
 
@@ -233,6 +237,10 @@ public class HomeAttentionFragment extends BaseFragment {
 
     @OnClick(R.id.bt_login)
     public void commit() {
+        if (StringUtils.isEmpty(MyApplication.token)) {
+            gotoActivity(LoginActivity.class, false);
+            return;
+        }
         switch (indexBO.getAuthStatus()) {   //认证状态
             case "0":   //未认证
                 if (StringUtils.isEmpty(MyApplication.token)) {

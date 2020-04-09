@@ -100,7 +100,11 @@ public class UpdateFileUtils {
         if (BitmapUtil.isImageFile(loacalFilePath)) {
             File compressedImageFile;
             try {
-                compressedImageFile = new Compressor(Utils.getApp()).setQuality(50).compressToFile(file);
+                compressedImageFile = new Compressor(Utils.getApp())
+                        .setMaxHeight(4096)
+                        .setMaxWidth(4096)
+                        .setQuality(50)
+                        .compressToFile(file);
             } catch (IOException e) {
                 e.printStackTrace();
                 compressedImageFile = file;

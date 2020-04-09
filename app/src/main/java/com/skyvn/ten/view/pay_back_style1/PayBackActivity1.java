@@ -151,7 +151,7 @@ public class PayBackActivity1 extends BaseActivity {
             @Override
             public void convert(LGViewHolder holder, AccountBO accountBO, int position) {
                 holder.setText(R.id.fangshi_num, getResources().getString(R.string.fangshi) +
-                        OtherUtils.numberToChinese(position + 1));
+                        (position + 1));
                 holder.setText(R.id.remark, accountBO.getRemark());
                 holder.setText(R.id.bank_num, getResources().getString(R.string.yinghang_kahao)
                         + accountBO.getCardNumber());

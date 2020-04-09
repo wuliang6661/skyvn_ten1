@@ -1,5 +1,6 @@
 package com.skyvn.ten.view.main.home_all_status;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.skyvn.ten.bean.GongGaoBO;
 import com.skyvn.ten.bean.IndexBO;
 import com.skyvn.ten.bean.RefreshEvent;
 import com.skyvn.ten.view.MessageActivity;
+import com.skyvn.ten.view.SettingActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -58,6 +60,14 @@ public class HomeAllFragment extends BaseFragment {
         gonggaoLayout.setVisibility(View.GONE);
 
     }
+
+    @OnClick(R.id.btn_album)
+    public void right() {
+        Intent intent = new Intent(getActivity(), SettingActivity.class);
+        intent.putExtra("type", 1);
+        startActivity(intent);
+    }
+
 
 
     @Override

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.Utils;
@@ -40,6 +42,8 @@ public class SettingActivity extends BaseActivity {
     TextView userPhone;
     @BindView(R.id.lanunger_text)
     TextView lanungerText;
+    @BindView(R.id.bt_logout)
+    Button btLogout;
 
     private String checkPosition = null;
 
@@ -56,12 +60,21 @@ public class SettingActivity extends BaseActivity {
         goBack();
         setTitleText(getResources().getString(R.string.setting));
 
-        userPhone.setText(MyApplication.userBO.getPhone());
-        Glide.with(this).load(MyApplication.userBO.getHeadPortrait())
-                .error(R.drawable.user_img_defalt).
-                placeholder(R.drawable.user_img_defalt).into(userImg);
+        if(MyApplication.userBO == null){
+            userPhone.setText(R.string.weidenglu);
+            userImg.setImageResource(R.drawable.user_img_defalt);
+        }else{
+            userPhone.setText(MyApplication.userBO.getPhone());
+            Glide.with(this).load(MyApplication.userBO.getHeadPortrait())
+                    .error(R.drawable.user_img_defalt).
+                    placeholder(R.drawable.user_img_defalt).into(userImg);
+        }
 
         checkPosition = MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, "");
+        int type = getIntent().getIntExtra("type", 0);
+        if (type != 0) {
+            btLogout.setVisibility(View.GONE);
+        }
     }
 
 

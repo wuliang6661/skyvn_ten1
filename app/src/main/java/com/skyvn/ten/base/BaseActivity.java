@@ -141,7 +141,7 @@ public abstract class BaseActivity extends SupportActivity {
     protected void rightButton() {
         ImageView imageView = findViewById(R.id.right_img);
         imageView.setVisibility(View.VISIBLE);
-        imageView.setOnClickListener(v -> gotoActivity(KefuActivity.class,false));
+        imageView.setOnClickListener(v -> gotoActivity(KefuActivity.class, false));
     }
 
 
@@ -176,10 +176,11 @@ public abstract class BaseActivity extends SupportActivity {
 //        startActivity(it);
 //        finish();
 //    }
-
-
     protected void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        toast.setText(message);
+        toast.show();
     }
 
 

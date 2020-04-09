@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">红豆</string>
+    <string name="app_name">小樱桃</string>
 
     <string name="login_txt">Ký vô.</string>
     <string name="photo_hint">Số di động</string>
@@ -400,15 +400,19 @@
     <string name="shifoulijigengxin">Cập nhật bây giờ hoặc không？</string>
     <string name="tijiaochenggong">Gửi thành công</string>
     <string name="jinkuaishenhe">Chào mừng dùng\nChúng tôi sẽ xem lại đơn xin của anh càng sớm càng tốt</string>
-    <string name="shenfenzheng_xianzhi">身份证号为9位或12位！</string>
-    <string name="jingjilianxiren_xianzhi">联系人手机号需为10位，请重新选择！</string>
-    <string name="yinghangkaleixing">银行卡类型</string>
-    <string name="yinghangzhanghao">银行账号</string>
-    <string name="wupipei_title">尊敬的申请人，您的额度不足，没有匹配的产品，</string>
-    <string name="qing">请</string>
-    <string name="qingxianrenzhengshangyige">请先认证上一个认证项</string>
-    <string name="buzhichigaishipin">不支持该视频，请重新拍摄！</string>
-    <string name="weikaiqishexiangtouquanxian">未开启摄像头或相册权限,请手动到设置去开启权限</string>
-    <string name="huotiqueshi">活体认证初始化key缺失！</string>
-
+    <string name="shenfenzheng_xianzhi">Số nhận dạng là 9 hay 12 trên số!</string>
+    <string name="jingjilianxiren_xianzhi">Số di động của người liên lạc phải là mười chữ số, xin vui lòng chọn lại!</string>
+    <string name="yinghangkaleixing">Thẻ ngân hàng</string>
+    <string name="yinghangzhanghao">Tài khoản ngân hàng</string>
+    <string name="wupipei_title">Thưa cô, chỉ tiêu của cô không đủ và không có sản phẩm tương ứng,</string>
+    <string name="qing">Mời.</string>
+    <string name="qingxianrenzhengshangyige">Xin kiểm tra mục chứng nhận cuối trước</string>
+    <string name="buzhichigaishipin">Đoạn phim này không được hỗ trợ, xin hãy quay lại!</string>
+    <string name="weikaiqishexiangtouquanxian">Quyền được bật máy ảnh hay tập ảnh. Xin hãy đến thiết lập để tự bật quyền truy cập vào máy ảnh.</string>
+    <string name="huotiqueshi">Đang mất chìa khóa khởi tạo xác thực.</string>
+    <string name="lianxirenhaomabunengxiangtong">Số liên lạc không thể giống nhau!</string>
+    <string name="dengluguoqi">Đăng nhập đã hết hạn, xin hãy đăng nhập lại!</string>
+    <string name="duanxin">Thông điệp ngắn</string>
+    <string name="yuyan">ngôn ngữ</string>
+    <string name="yirenzheng">phê duyệt</string>
 </resources>

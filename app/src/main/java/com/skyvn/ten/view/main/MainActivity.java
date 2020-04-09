@@ -18,6 +18,7 @@ import com.skyvn.ten.bean.LiveKeyBO;
 import com.skyvn.ten.bean.RecommendBO;
 import com.skyvn.ten.util.AppManager;
 import com.skyvn.ten.util.UpdateUtils;
+import com.skyvn.ten.view.LoginActivity;
 import com.skyvn.ten.view.main.none.NoneFragment;
 import com.skyvn.ten.view.main.none.NoneFragment1;
 import com.skyvn.ten.view.main.none.NoneFragment2;
@@ -107,11 +108,19 @@ public class MainActivity extends BaseActivity {
                 setButtom(0);
                 break;
             case R.id.main2:
+                if (StringUtils.isEmpty(MyApplication.token)) {
+                    gotoActivity(LoginActivity.class, false);
+                    return;
+                }
                 showHideFragment(mFragments[1], mFragments[selectPosition]);
                 selectPosition = 1;
                 setButtom(1);
                 break;
             case R.id.main3:
+                if (StringUtils.isEmpty(MyApplication.token)) {
+                    gotoActivity(LoginActivity.class, false);
+                    return;
+                }
                 showHideFragment(mFragments[2], mFragments[selectPosition]);
                 selectPosition = 2;
                 setButtom(2);
