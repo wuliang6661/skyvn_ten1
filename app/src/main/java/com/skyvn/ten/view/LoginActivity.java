@@ -267,16 +267,19 @@ public class LoginActivity extends BaseActivity {
             showToast(getResources().getString(R.string.login_hint));
             return;
         }
+        showProgress();
         HttpServerImpl.getVerificationCode(codeImgBO.getKey(), strPhone, strCodeImg)
                 .subscribe(new HttpResultSubscriber<String>() {
                     @Override
                     public void onSuccess(String s) {
+                        stopProgress();
                         getVerfication.setEnabled(false);
                         timer.start();
                     }
 
                     @Override
                     public void onFiled(String message) {
+                        stopProgress();
                         showToast(message);
                     }
                 });
