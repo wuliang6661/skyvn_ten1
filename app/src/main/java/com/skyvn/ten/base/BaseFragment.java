@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
-import android.widget.Toast;
 
 import com.bigkoo.svprogresshud.SVProgressHUD;
-import com.blankj.utilcode.util.ToastUtils;
-
 import com.gyf.barlibrary.ImmersionBar;
 import com.skyvn.ten.R;
+import com.skyvn.ten.util.ToastManager;
+
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -91,9 +90,10 @@ public abstract class BaseFragment extends SupportFragment {
 
     protected void showToast(String message) {
 //        ToastUtils.showShort(message);
-        Toast toast = Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
-        toast.setText(message);
-        toast.show();
+//        Toast toast = Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
+//        toast.setText(message);
+//        toast.show();
+        ToastManager.showShort(message);
     }
 
     public void onRequestEnd() {

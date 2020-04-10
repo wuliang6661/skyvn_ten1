@@ -20,6 +20,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.skyvn.ten.R;
 import com.skyvn.ten.config.IConstant;
 import com.skyvn.ten.util.AppManager;
+import com.skyvn.ten.util.ToastManager;
 import com.skyvn.ten.util.language.LanguageUtil;
 import com.skyvn.ten.view.KefuActivity;
 
@@ -178,9 +179,10 @@ public abstract class BaseActivity extends SupportActivity {
 //    }
     protected void showToast(String message) {
 //        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-        toast.setText(message);
-        toast.show();
+//        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+//        toast.setText(message);
+//        toast.show();
+        ToastManager.showShort(message);
     }
 
 
