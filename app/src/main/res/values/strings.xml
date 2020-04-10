@@ -418,5 +418,6 @@
     <string name="yuyan">语言</string>
     <string name="yirenzheng">已认证</string>
     <string name="jiazaizhong">加载中...</string>
+    <string name="qingdakaigps">请前往设置界面打开GPS权限</string>
 
 </resources>

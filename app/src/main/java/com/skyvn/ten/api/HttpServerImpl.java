@@ -583,4 +583,11 @@ public class HttpServerImpl {
     public static Observable<String> getRealName() {
         return getService().getRealName().compose(RxResultHelper.httpRusult());
     }
+
+    public static Observable<String> updateLocation(String longation, String langation) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("localGpsLat", langation);
+        params.put("localGpsLong", longation);
+        return getService().updateLocation(params).compose(RxResultHelper.httpRusult());
+    }
 }

@@ -405,4 +405,10 @@ public interface HttpService {
     @GET("clientUserInfo/getRealName")
     Observable<BaseResult<String>> getRealName();
 
+    /**
+     * 上传GPS定位数据
+     */
+    @POST("clientUser/updateLocation")
+    Observable<BaseResult<String>> updateLocation(@Body Map<String,Object> params);
+
 }
