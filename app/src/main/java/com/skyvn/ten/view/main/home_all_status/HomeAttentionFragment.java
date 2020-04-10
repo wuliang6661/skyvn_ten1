@@ -102,10 +102,10 @@ public class HomeAttentionFragment extends BaseFragment {
 
     @OnClick(R.id.kefu_layout)
     public void clickKefu() {
-        if (StringUtils.isEmpty(MyApplication.token)) {
-            gotoActivity(LoginActivity.class, false);
-            return;
-        }
+//        if (StringUtils.isEmpty(MyApplication.token)) {
+//            gotoActivity(LoginActivity.class, false);
+//            return;
+//        }
         gotoActivity(KefuActivity.class, false);
     }
 
