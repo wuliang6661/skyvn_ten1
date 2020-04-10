@@ -158,8 +158,8 @@ public class BorrowActivity1 extends BaseActivity {
 
             @Override
             public void convert(LGViewHolder holder, HuanKuanBO.DataBean dataBean, int position) {
-                holder.setText(R.id.update_price, dataBean.getRepaymentAmount() + getResources().getString(R.string.danwei_yuan));
-                holder.setText(R.id.update_time, getResources().getString(R.string.huankuanshijian) + dataBean.getUpdateTime());
+                holder.setText(R.id.update_price, dataBean.getRepayAmount() + getResources().getString(R.string.danwei_yuan));
+                holder.setText(R.id.update_time, getResources().getString(R.string.huankuanshijian) + dataBean.getAuditTime());
             }
         };
         recycleView.setAdapter(adapter);

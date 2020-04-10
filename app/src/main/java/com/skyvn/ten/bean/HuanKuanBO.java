@@ -6,17 +6,17 @@ public class HuanKuanBO {
 
 
     /**
-     * num : 1
-     * size : 500
-     * total : 12
-     * pageCount : 1
-     * data : [{"repaymentAmount":"2.00","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"},{"repaymentAmount":"3.21","updateTime":"2020-02-12 19:03:24"}]
+     * data : [{"auditTime":"","repayAmount":0}]
+     * num : 0
+     * pageCount : 0
+     * size : 0
+     * total : 0
      */
 
     private int num;
-    private int size;
-    private String total;
     private int pageCount;
+    private int size;
+    private int total;
     private List<DataBean> data;
 
     public int getNum() {
@@ -27,6 +27,14 @@ public class HuanKuanBO {
         this.num = num;
     }
 
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
     public int getSize() {
         return size;
     }
@@ -35,20 +43,12 @@ public class HuanKuanBO {
         this.size = size;
     }
 
-    public String getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(int total) {
         this.total = total;
-    }
-
-    public int getPageCount() {
-        return pageCount;
-    }
-
-    public void setPageCount(int pageCount) {
-        this.pageCount = pageCount;
     }
 
     public List<DataBean> getData() {
@@ -61,27 +61,27 @@ public class HuanKuanBO {
 
     public static class DataBean {
         /**
-         * repaymentAmount : 2.00
-         * updateTime : 2020-02-12 19:03:24
+         * auditTime :
+         * repayAmount : 0
          */
 
-        private String repaymentAmount;
-        private String updateTime;
+        private String auditTime;
+        private int repayAmount;
 
-        public String getRepaymentAmount() {
-            return repaymentAmount;
+        public String getAuditTime() {
+            return auditTime;
         }
 
-        public void setRepaymentAmount(String repaymentAmount) {
-            this.repaymentAmount = repaymentAmount;
+        public void setAuditTime(String auditTime) {
+            this.auditTime = auditTime;
         }
 
-        public String getUpdateTime() {
-            return updateTime;
+        public int getRepayAmount() {
+            return repayAmount;
         }
 
-        public void setUpdateTime(String updateTime) {
-            this.updateTime = updateTime;
+        public void setRepayAmount(int repayAmount) {
+            this.repayAmount = repayAmount;
         }
     }
 }
