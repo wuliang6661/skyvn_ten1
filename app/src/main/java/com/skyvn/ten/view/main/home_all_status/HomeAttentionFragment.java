@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -343,11 +344,13 @@ public class HomeAttentionFragment extends BaseFragment {
      */
     public void checkPermissions() {
         showProgress();
+        timer.start();
         GPSUtils.getInstance(getActivity().getApplicationContext()).getLngAndLat(new GPSUtils.OnLocationResultListener() {
             @Override
             public void onLocationResult(Location location) {
                 loginLatitude = location.getLatitude();
                 loginLongitude = location.getLongitude();
+                timer.cancel();
                 GPSUtils.getInstance(getActivity().getApplicationContext()).removeListener();
                 updateLocation(loginLatitude + "", loginLongitude + "");
                 LogUtils.e("loginLatitude == " + loginLatitude + "   loginLongitude ==  " + loginLongitude);
@@ -357,12 +360,34 @@ public class HomeAttentionFragment extends BaseFragment {
             public void OnLocationChange(Location location) {
                 loginLatitude = location.getLatitude();
                 loginLongitude = location.getLongitude();
+                timer.cancel();
                 GPSUtils.getInstance(getActivity().getApplicationContext()).removeListener();
                 updateLocation(loginLatitude + "", loginLongitude + "");
                 LogUtils.e("loginLatitude == " + loginLatitude + "   loginLongitude ==  " + loginLongitude);
             }
+
+            @Override
+            public void OnLocationError() {
+                timer.cancel();
+                stopProgress();
+            }
         });
     }
+
+
+    CountDownTimer timer = new CountDownTimer(10000, 1000) {
+        @Override
+        public void onTick(long l) {
+
+        }
+
+        @Override
+        public void onFinish() {
+            stopProgress();
+            GPSUtils.getInstance(getActivity().getApplicationContext()).removeListener();
+            showToast(getString(R.string.gpshuoqushibai));
+        }
+    };
 
 
     /**
@@ -402,6 +427,9 @@ public class HomeAttentionFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        if (timer != null) {
+            timer.cancel();
+        }
         GPSUtils.getInstance(getActivity().getApplicationContext()).removeListener();
     }
 }

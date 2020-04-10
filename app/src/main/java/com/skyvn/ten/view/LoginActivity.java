@@ -17,8 +17,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.skyvn.ten.R;
@@ -30,7 +28,6 @@ import com.skyvn.ten.bean.CodeImgBO;
 import com.skyvn.ten.bean.LoginSuressBO;
 import com.skyvn.ten.util.BitmapUtil;
 import com.skyvn.ten.util.GPSUtils;
-import com.skyvn.ten.util.MyLocationUtil;
 import com.skyvn.ten.view.main.MainActivity;
 
 import butterknife.BindView;
@@ -374,6 +371,11 @@ public class LoginActivity extends BaseActivity {
                     loginLatitude = location.getLatitude();
                     loginLongitude = location.getLongitude();
                     LogUtils.e("loginLatitude == " + loginLatitude + "   loginLongitude ==  " + loginLongitude);
+                }
+
+                @Override
+                public void OnLocationError() {
+
                 }
             });
 //            LocationManager lm = (LocationManager) Utils.getApp().getSystemService(Context.LOCATION_SERVICE);

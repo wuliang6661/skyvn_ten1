@@ -57,6 +57,9 @@ public class GPSUtils {
 //            Intent i = new Intent();
 //            i.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 //            mContext.startActivity(i);
+            if (mOnLocationListener != null) {
+                mOnLocationListener.OnLocationError();
+            }
             ToastManager.showShort(mContext.getString(R.string.qingdakaigps));
             return null;
         }
@@ -116,5 +119,7 @@ public class GPSUtils {
         void onLocationResult(Location location);
 
         void OnLocationChange(Location location);
+
+        void OnLocationError();
     }
 }
