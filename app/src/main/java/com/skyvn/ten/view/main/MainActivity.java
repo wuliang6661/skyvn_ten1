@@ -14,6 +14,7 @@ import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.base.BaseActivity;
 import com.skyvn.ten.base.MyApplication;
+import com.skyvn.ten.bean.GoHomeEvent;
 import com.skyvn.ten.bean.LiveKeyBO;
 import com.skyvn.ten.bean.RecommendBO;
 import com.skyvn.ten.util.AppManager;
@@ -24,6 +25,10 @@ import com.skyvn.ten.view.main.none.NoneFragment1;
 import com.skyvn.ten.view.main.none.NoneFragment2;
 import com.skyvn.ten.view.main.none.NoneFragment3;
 import com.xyz.tabitem.BottmTabItem;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import ai.advance.liveness.lib.GuardianLivenessDetectionSDK;
 import ai.advance.liveness.lib.Market;
@@ -53,6 +58,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        EventBus.getDefault().register(this);
         main2.setVisibility(View.GONE);
         buttms = new BottmTabItem[]{main1, main2, main3};
         showTuijian();
@@ -60,6 +66,12 @@ public class MainActivity extends BaseActivity {
         requestPermission();
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 
     /**
      * 获取活体检测的key
@@ -128,6 +140,13 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(GoHomeEvent event) {
+        showHideFragment(mFragments[0], mFragments[selectPosition]);
+        selectPosition = 0;
+        setButtom(0);
+    }
+
 
     /**
      * 初始化fragment
@@ -165,28 +184,6 @@ public class MainActivity extends BaseActivity {
      */
     private void showTuijian() {
         showProgress();
-//        HttpServerImpl.getAppRecommend().subscribe(new HttpResultSubscriber<String>() {
-//            @Override
-//            public void onSuccess(String s) {
-//                stopProgress();
-//                if ("0".equals(s)) {
-//                    main2.setVisibility(View.GONE);
-//                    initFragment(false);
-//                } else {
-//                    main2.setVisibility(View.VISIBLE);
-//                    initFragment(true);
-//                }
-//            }
-//
-//            @Override
-//            public void onFiled(String message) {
-//                stopProgress();
-//                showToast(message);
-//                main2.setVisibility(View.GONE);
-//                initFragment(false);
-//            }
-//        });
-
         HttpServerImpl.getRemomImg().subscribe(new HttpResultSubscriber<RecommendBO>() {
             @Override
             public void onSuccess(RecommendBO s) {
