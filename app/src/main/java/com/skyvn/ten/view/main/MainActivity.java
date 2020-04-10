@@ -63,8 +63,11 @@ public class MainActivity extends BaseActivity {
         buttms = new BottmTabItem[]{main1, main2, main3};
         if (!StringUtils.isEmpty(MyApplication.token)) {
             showTuijian();
+        } else {
+            main2.setVisibility(View.GONE);
+            initFragment(false);
         }
-        getSaasKey();
+//        getSaasKey();
         requestPermission();
     }
 

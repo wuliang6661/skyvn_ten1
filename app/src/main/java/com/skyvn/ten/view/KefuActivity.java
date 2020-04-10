@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.skyvn.ten.R;
@@ -53,10 +54,15 @@ public class KefuActivity extends BaseActivity {
         goBack();
         setTitleText(getResources().getString(R.string.my_kefu));
 
-        userName.setText(MyApplication.userBO.getPhone());
-        Glide.with(this).load(MyApplication.userBO.getHeadPortrait())
-                .error(R.drawable.user_img_defalt).
-                placeholder(R.drawable.user_img_defalt).into(userImg);
+        if(StringUtils.isEmpty(MyApplication.token)){
+            userName.setText(getString(R.string.weidenglu));
+            userImg.setImageResource(R.drawable.user_img_defalt);
+        }else{
+            userName.setText(MyApplication.userBO.getPhone());
+            Glide.with(this).load(MyApplication.userBO.getHeadPortrait())
+                    .error(R.drawable.user_img_defalt).
+                    placeholder(R.drawable.user_img_defalt).into(userImg);
+        }
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recycleView.setLayoutManager(manager);
