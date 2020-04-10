@@ -73,6 +73,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        goBack();
         setTitleText(getResources().getString(R.string.login_txt));
         inputLayoutPhone.setErrorEnabled(false);
         inputLayoutImageVerification.setErrorEnabled(false);
@@ -82,12 +83,6 @@ public class LoginActivity extends BaseActivity {
         requestPermission();
         checkPermissions();
         getCodeImg();
-//        if (BuildConfig.DEBUG) {
-//            etPhoto.setText("15151977426");
-//            // 15726818192
-//            etVerfication.setText("111111");
-//            etImageVerfication.setText("ffff");
-//        }
     }
 
 

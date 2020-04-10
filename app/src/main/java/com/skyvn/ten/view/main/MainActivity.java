@@ -61,7 +61,9 @@ public class MainActivity extends BaseActivity {
         EventBus.getDefault().register(this);
         main2.setVisibility(View.GONE);
         buttms = new BottmTabItem[]{main1, main2, main3};
-        showTuijian();
+        if (!StringUtils.isEmpty(MyApplication.token)) {
+            showTuijian();
+        }
         getSaasKey();
         requestPermission();
     }
@@ -86,8 +88,6 @@ public class MainActivity extends BaseActivity {
                 }
                 MyApplication.LIVE_KEY = s.getSdkKey();
                 MyApplication.Secret_Key = s.getSecretKey();
-//                GuardianLivenessDetectionSDK.init(getApplication(), "7cec70f1679a5c3c", "728e65227bf25507",
-//                        Market.Vietnam);
                 GuardianLivenessDetectionSDK.init(getApplication(), MyApplication.LIVE_KEY, MyApplication.Secret_Key,
                         Market.Vietnam);
             }

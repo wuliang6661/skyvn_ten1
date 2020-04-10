@@ -269,9 +269,9 @@ public class AuthenticationUtils {
         Intent intent = new Intent(context, cls);
         intent.putExtra("needStatus", needSourss);
         context.startActivity(intent);
-        if (isFinish) {
-            context.finish();
-        }
+//        if (isFinish) {
+        context.finish();
+//        }
     }
 
 
