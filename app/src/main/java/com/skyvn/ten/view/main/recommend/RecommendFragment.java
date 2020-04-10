@@ -97,6 +97,7 @@ public class RecommendFragment extends MVPBaseFragment<RecommendContract.View, R
         }
         Bundle bundle = new Bundle();
         bundle.putString("url", bannerBO.getForwardUrl());
+        bundle.putString("title", getString(R.string.guanggao));
         gotoActivity(WebActivity.class, bundle, false);
     }
 

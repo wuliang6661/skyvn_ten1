@@ -27,7 +27,8 @@ public class WebActivity extends BaseWebActivity {
         super.onCreate(savedInstanceState);
 
         goBack();
-        setTitleText(getResources().getString(R.string.guanggao));
+        String title = getIntent().getExtras().getString("title");
+        setTitleText(title);
 
         initWebView(webView);
         String url = getIntent().getExtras().getString("url");

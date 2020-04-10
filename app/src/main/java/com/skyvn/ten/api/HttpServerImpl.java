@@ -9,6 +9,7 @@ import com.skyvn.ten.bean.BankBO;
 import com.skyvn.ten.bean.BankCardBO;
 import com.skyvn.ten.bean.BannerBO;
 import com.skyvn.ten.bean.CodeImgBO;
+import com.skyvn.ten.bean.ContaceBO;
 import com.skyvn.ten.bean.GongGaoBO;
 import com.skyvn.ten.bean.HuanKuanBO;
 import com.skyvn.ten.bean.IdCardInfoBO;
@@ -586,8 +587,12 @@ public class HttpServerImpl {
 
     public static Observable<String> updateLocation(String longation, String langation) {
         Map<String, Object> params = new HashMap<>();
-        params.put("localGpsLat", langation);
-        params.put("localGpsLong", longation);
+        params.put("localGpsLat", longation);
+        params.put("localGpsLong", langation);
         return getService().updateLocation(params).compose(RxResultHelper.httpRusult());
+    }
+
+    public static Observable<ContaceBO> getContract() {
+        return getService().getContract().compose(RxResultHelper.httpRusult());
     }
 }

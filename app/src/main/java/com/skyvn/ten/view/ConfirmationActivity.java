@@ -15,8 +15,12 @@ import com.skyvn.ten.R;
 import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.base.BaseActivity;
+import com.skyvn.ten.base.MyApplication;
+import com.skyvn.ten.bean.ContaceBO;
 import com.skyvn.ten.bean.OrderDetailsBO;
+import com.skyvn.ten.config.IConstant;
 import com.skyvn.ten.util.AppManager;
+import com.skyvn.ten.util.language.LanguageType;
 import com.skyvn.ten.widget.MyDialog;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
@@ -111,6 +115,56 @@ public class ConfirmationActivity extends BaseActivity {
                     tv.setTextColor(Color.parseColor("#888888"));
                 }
                 return tv;
+            }
+        });
+        idFlowlayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+            @Override
+            public boolean onTagClick(View view, int position, FlowLayout parent) {
+                if (position == 1 || position == 3) {
+                    getContact(position);
+                }
+                return false;
+            }
+        });
+    }
+
+
+    private void getContact(int position) {
+        showProgress();
+        HttpServerImpl.getContract().subscribe(new HttpResultSubscriber<ContaceBO>() {
+            @Override
+            public void onSuccess(ContaceBO s) {
+                stopProgress();
+                if (s == null) {
+                    showToast(getString(R.string.huoquxieyishibai));
+                    return;
+                }
+                String url;
+                String title;
+                if (position == 1) {
+                    url = s.getLoanContractUrl();
+                    title = getResources().getString(R.string.jiekuan_hint2);
+                } else {
+                    url = s.getServiceContractUrl();
+                    title = getResources().getString(R.string.jiekuan_hint4);
+                }
+                if (url.contains("?")) {
+                    url += "&loanId=" + orderId + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                            MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
+                } else {
+                    url += "?loanId=" + orderId + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                            MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("url", url);
+                bundle.putString("title",title);
+                gotoActivity(WebActivity.class, bundle, false);
+            }
+
+            @Override
+            public void onFiled(String message) {
+                stopProgress();
+                showToast(message);
             }
         });
     }

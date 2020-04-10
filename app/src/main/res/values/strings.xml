@@ -420,5 +420,6 @@
     <string name="jiazaizhong">加载中...</string>
     <string name="qingdakaigps">请前往设置界面打开GPS权限</string>
     <string name="gpshuoqushibai">GPS获取失败！</string>
+    <string name="huoquxieyishibai">获取协议失败</string>
 
 </resources>
