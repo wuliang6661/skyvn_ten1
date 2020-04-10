@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
-import com.google.gson.Gson;
 import com.skyvn.ten.base.MyApplication;
 import com.skyvn.ten.config.IConstant;
 import com.skyvn.ten.util.MD5;

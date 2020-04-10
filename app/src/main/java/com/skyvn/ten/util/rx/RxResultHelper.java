@@ -66,7 +66,6 @@ public class RxResultHelper {
     private static <T> Observable<T> createData(final T t) {
         return Observable.create(subscriber -> {
             try {
-//                subscriber.setPageInfo(pageBO);
                 subscriber.onNext(t);
                 subscriber.onCompleted();
             } catch (Exception e) {
