@@ -103,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_weight="1"
+                android:singleLine="true"
                 android:text="@string/zhanqi_hint1"
                 android:textColor="#333333"
                 android:textSize="13sp" />
@@ -111,6 +112,7 @@
                 android:id="@+id/kefu_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView

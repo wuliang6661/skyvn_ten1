@@ -17,25 +17,19 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.skyvn.ten.R;
-import com.skyvn.ten.api.HttpResultSubscriber;
-import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.bean.ContactBO;
 import com.skyvn.ten.mvp.MVPBaseActivity;
-import com.skyvn.ten.util.AuthenticationUtils;
 import com.skyvn.ten.util.phone.PhoneDto;
 import com.skyvn.ten.util.phone.PhoneUtil;
-import com.skyvn.ten.widget.AlertDialog;
 import com.skyvn.ten.widget.lgrecycleadapter.LGRecycleViewAdapter;
 import com.skyvn.ten.widget.lgrecycleadapter.LGViewHolder;
 
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 
 /**
@@ -64,9 +58,7 @@ public class ContactActivity extends MVPBaseActivity<ContactContract.View, Conta
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        goBack();
-        LinearLayout imageView = findViewById(R.id.back);
-        imageView.setVisibility(View.VISIBLE);
+        goBack();
         setTitleText(getResources().getString(R.string.contact));
         rightButton();
 
@@ -78,24 +70,6 @@ public class ContactActivity extends MVPBaseActivity<ContactContract.View, Conta
         initView();
     }
 
-
-    @OnClick(R.id.back)
-    public void back() {
-        HttpServerImpl.getBackMsg(AuthenticationUtils.PHONE_LIST).subscribe(new HttpResultSubscriber<String>() {
-            @Override
-            public void onSuccess(String s) {
-                new AlertDialog(ContactActivity.this).builder().setGone().setTitle(getResources().getString(R.string.tishi))
-                        .setMsg(s)
-                        .setNegativeButton(getResources().getString(R.string.fangqishenqing), view -> finish())
-                        .setPositiveButton(getResources().getString(R.string.jixurenzheng), null).show();
-            }
-
-            @Override
-            public void onFiled(String message) {
-                showToast(message);
-            }
-        });
-    }
 
 
     private void initView() {

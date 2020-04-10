@@ -6,6 +6,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import com.skyvn.ten.R;
+
 import java.util.List;
 
 /**
@@ -55,7 +57,7 @@ public class GPSUtils {
 //            Intent i = new Intent();
 //            i.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 //            mContext.startActivity(i);
-//            ToastManager.showToast("");
+            ToastManager.showShort(mContext.getString(R.string.qingdakaigps));
             return null;
         }
 

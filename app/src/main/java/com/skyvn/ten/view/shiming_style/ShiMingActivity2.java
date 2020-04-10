@@ -2,6 +2,7 @@ package com.skyvn.ten.view.shiming_style;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,7 +22,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.bumptech.glide.Glide;
@@ -89,7 +89,6 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
             jumpSkip.setVisibility(View.GONE);
         }
 
-        getPermission();
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
     }
@@ -134,11 +133,13 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
         switch (view.getId()) {
             case R.id.add_img:
                 selectIdCardType = 0;
-                ActionSheet.showSheet(this, this, null);
+//                ActionSheet.showSheet(this, this, null);
+                checkPermissions();
                 break;
             case R.id.add_img1:
                 selectIdCardType = 1;
-                ActionSheet.showSheet(this, this, null);
+//                ActionSheet.showSheet(this, this, null);
+                checkPermissions();
                 break;
         }
     }
@@ -169,66 +170,96 @@ public class ShiMingActivity2 extends BaseActivity implements ActionSheet.OnActi
     }
 
 
-
-    //获取权限
-    private boolean getPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(this,
-                    new String[]{
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.CAMERA
-                    }, 1);
-            return false;
-        } else {
-            return true;
+    private boolean allPermissionsGranted() {
+        for (String permission : getRequiredPermissions()) {
+            if (ContextCompat.checkSelfPermission(this, permission)
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
         }
+        return true;
     }
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 1://刚才的识别码
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {//用户同意权限,执行我们的操作
-//                    goPhotoAlbum();
-                } else {//用户拒绝之后,当然我们也可以弹出一个窗口,直接跳转到系统设置页面
-                    Toast.makeText(this, R.string.weikaiqishexiangtouquanxian, Toast.LENGTH_LONG).show();
-                }
-                break;
-            default:
-                break;
+    /**
+     * Detect camera authorization
+     */
+    public void checkPermissions() {
+        if (allPermissionsGranted()) {
+            onPermissionGranted();
+        } else {
+            ActivityCompat.requestPermissions(this, getRequiredPermissions(), 0x11);
         }
+    }
+
+    public String[] getRequiredPermissions() {
+        return new String[]{Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 0x11) {
+            //已授权
+            if (allGranted(grantResults)) {
+                onPermissionGranted();
+            } else {
+                onPermissionRefused();
+            }
+        }
+    }
+
+    /**
+     * Denied camera permissions
+     */
+    public void onPermissionRefused() {
+        new android.support.v7.app.AlertDialog.Builder(this).setMessage(getString(R.string.liveness_no_camera_permission)).setPositiveButton(getString(R.string.liveness_perform), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).create().show();
+    }
+
+    private boolean allGranted(int[] grantResults) {
+        boolean hasPermission = true;
+        for (int i = 0; i < grantResults.length; i++) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                hasPermission = false;
+            }
+        }
+        return hasPermission;
+    }
+
+    /**
+     * Got camera permissions
+     */
+    public void onPermissionGranted() {
+        ActionSheet.showSheet(this, this, null);
     }
 
 
     //激活相册操作
     private void goPhotoAlbum() {
-        if (getPermission()) {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            startActivityForResult(intent, 2);
-        }
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 2);
     }
 
     //激活相机操作
     private void goCamera() {
-        if (getPermission()) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                uri = FileProvider.getUriForFile(Objects.requireNonNull(this), "com.skyvn.ten.fileprovider", cameraSavePath);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            } else {
-                uri = Uri.fromFile(cameraSavePath);
-            }
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-            startActivityForResult(intent, 1);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            uri = FileProvider.getUriForFile(Objects.requireNonNull(this), "com.skyvn.ten.fileprovider", cameraSavePath);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            uri = Uri.fromFile(cameraSavePath);
         }
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        startActivityForResult(intent, 1);
     }
 
 

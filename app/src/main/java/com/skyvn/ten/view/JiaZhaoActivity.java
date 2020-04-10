@@ -2,6 +2,7 @@ package com.skyvn.ten.view;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -140,14 +142,87 @@ public class JiaZhaoActivity extends BaseActivity implements ActionSheet.OnActio
         switch (view.getId()) {
             case R.id.add_img1:
                 imageType = 1;
-                ActionSheet.showSheet(this, this, null);
+                checkPermissions();
+//                ActionSheet.showSheet(this, this, null);
                 break;
             case R.id.add_img2:
                 imageType = 2;
-                ActionSheet.showSheet(this, this, null);
+                checkPermissions();
+//                ActionSheet.showSheet(this, this, null);
                 break;
         }
     }
+
+    private boolean allPermissionsGranted() {
+        for (String permission : getRequiredPermissions()) {
+            if (ContextCompat.checkSelfPermission(this, permission)
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    /**
+     * Detect camera authorization
+     */
+    public void checkPermissions() {
+        if (allPermissionsGranted()) {
+            onPermissionGranted();
+        } else {
+            ActivityCompat.requestPermissions(this, getRequiredPermissions(), 0x11);
+        }
+    }
+
+    public String[] getRequiredPermissions() {
+        return new String[]{Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 0x11) {
+            //已授权
+            if (allGranted(grantResults)) {
+                onPermissionGranted();
+            } else {
+                onPermissionRefused();
+            }
+        }
+    }
+
+    /**
+     * Denied camera permissions
+     */
+    public void onPermissionRefused() {
+        new android.support.v7.app.AlertDialog.Builder(this).setMessage(getString(R.string.liveness_no_camera_permission)).setPositiveButton(getString(R.string.liveness_perform), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).create().show();
+    }
+
+    private boolean allGranted(int[] grantResults) {
+        boolean hasPermission = true;
+        for (int i = 0; i < grantResults.length; i++) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                hasPermission = false;
+            }
+        }
+        return hasPermission;
+    }
+
+    /**
+     * Got camera permissions
+     */
+    public void onPermissionGranted() {
+        ActionSheet.showSheet(this, this, null);
+    }
+
 
     @OnClick(R.id.bt_login)
     public void commitJiaZhao() {
