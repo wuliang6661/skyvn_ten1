@@ -3,13 +3,13 @@ package com.skyvn.ten.util;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.Utils;
 import com.skyvn.ten.R;
 
 public class ToastManager {
@@ -21,7 +21,8 @@ public class ToastManager {
             @Override
             public void run() {
                 //已在主线程中，可以更新UI
-                Context context = AppManager.getAppManager().curremtActivity();
+//                Context context = AppManager.getAppManager().curremtActivity();
+                Context context = Utils.getApp();
                 LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 //使用布局加载器，将编写的toast_layout布局加载进来
                 View view = layoutInflater.inflate(R.layout.toast_view, null);

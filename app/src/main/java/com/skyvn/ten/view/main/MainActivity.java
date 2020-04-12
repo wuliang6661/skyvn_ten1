@@ -15,7 +15,6 @@ import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.base.BaseActivity;
 import com.skyvn.ten.base.MyApplication;
 import com.skyvn.ten.bean.GoHomeEvent;
-import com.skyvn.ten.bean.LiveKeyBO;
 import com.skyvn.ten.bean.RecommendBO;
 import com.skyvn.ten.util.AppManager;
 import com.skyvn.ten.util.UpdateUtils;
@@ -30,8 +29,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import ai.advance.liveness.lib.GuardianLivenessDetectionSDK;
-import ai.advance.liveness.lib.Market;
 import butterknife.BindView;
 import butterknife.OnClick;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -68,7 +65,10 @@ public class MainActivity extends BaseActivity {
             initFragment(false);
         }
 //        getSaasKey();
-        requestPermission();
+        if (!MyApplication.spUtils.getBoolean("isFirst", false)) {
+            requestPermission();
+            MyApplication.spUtils.put("isFirst", true);
+        }
     }
 
 
@@ -78,30 +78,43 @@ public class MainActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    /**
-     * 获取活体检测的key
-     */
-    private void getSaasKey() {
-        HttpServerImpl.getSaaSActiveKey().subscribe(new HttpResultSubscriber<LiveKeyBO>() {
-            @Override
-            public void onSuccess(LiveKeyBO s) {
-                if (s == null || StringUtils.isEmpty(s.getSdkKey()) || StringUtils.isEmpty(s.getSecretKey())) {
-                    showToast(getString(R.string.huotiqueshi));
-                    return;
-                }
-                MyApplication.LIVE_KEY = s.getSdkKey();
-                MyApplication.Secret_Key = s.getSecretKey();
-                GuardianLivenessDetectionSDK.init(getApplication(), MyApplication.LIVE_KEY, MyApplication.Secret_Key,
-                        Market.Vietnam);
-            }
 
-            @Override
-            public void onFiled(String message) {
-                showToast(message);
-            }
-        });
+    private void requestPermission() {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.CALL_PHONE,
+                            Manifest.permission.READ_SMS,
+                            Manifest.permission.READ_CONTACTS
+                    }, 1);
+
+        }
     }
-
 
     @Override
     protected int getLayout() {
@@ -250,27 +263,5 @@ public class MainActivity extends BaseActivity {
         return super.onKeyUp(keyCode, event);
     }
 
-
-    private void requestPermission() {
-        // Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(this,
-                    new String[]{
-                            Manifest.permission.READ_PHONE_STATE,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.ACCESS_COARSE_LOCATION,
-                            Manifest.permission.ACCESS_FINE_LOCATION
-                    }, 1);
-
-        }
-    }
 
 }

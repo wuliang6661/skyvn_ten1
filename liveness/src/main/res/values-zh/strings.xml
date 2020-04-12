@@ -7,7 +7,7 @@
     <string name="liveness_hold_phone_vertical">请竖直手机</string>
     <string name="liveness_weak_light">请让光线再亮点</string>
     <string name="liveness_too_light">请让光线再暗点</string>
-    <string name="liveness_no_camera_permission">未开启摄像头，请开启相机权限</string>
+    <string name="liveness_no_camera_permission">需要开启相关权限，请去设置开启！</string>
     <string name="liveness_perform">确定</string>
     <string name="liveness_cancel">取消</string>
     <string name="liveness_try_again">再试一次</string>

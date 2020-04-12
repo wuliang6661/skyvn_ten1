@@ -75,7 +75,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="500000RMB"
             android:textColor="#FF3B30"
             android:textSize="14sp" />
 
@@ -115,8 +114,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="10天"
             android:singleLine="true"
+            android:text="10天"
             android:textColor="#000000"
             android:textSize="14sp" />
 

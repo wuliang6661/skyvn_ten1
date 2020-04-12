@@ -33,8 +33,9 @@ public class RxResultHelper {
                         return createData(mDYResponse.getData());
                     } else if (mDYResponse.getCode() == 421) {   //重新登录
                         MyApplication.spUtils.remove("token");
+                        MyApplication.token = null;
                         Activity activity = AppManager.getAppManager().curremtActivity();
-                        if (activity instanceof LoginActivity) {
+                        if (activity instanceof MainActivity) {
                             return Observable.error(new RuntimeException(mDYResponse.getMsg()));
                         }
                         Intent intent = new Intent(activity, MainActivity.class);
@@ -47,8 +48,9 @@ public class RxResultHelper {
                         return Observable.error(new DialogCallException(mDYResponse.getMsg()));
                     } else if (mDYResponse.getCode() == 401) {
                         MyApplication.spUtils.remove("token");
+                        MyApplication.token = null;
                         Activity activity = AppManager.getAppManager().curremtActivity();
-                        if (activity instanceof LoginActivity) {
+                        if (activity instanceof MainActivity) {
                             return Observable.error(new RuntimeException(mDYResponse.getMsg()));
                         }
                         Intent intent = new Intent(activity, MainActivity.class);

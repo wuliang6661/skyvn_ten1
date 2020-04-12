@@ -80,7 +80,7 @@ public class Msg14Activity extends BaseActivity implements ActionSheet.OnActionS
         setTitleText(getResources().getString(R.string.duanxin1414));
         rightButton();
 
-        getPermission();
+//        getPermission();
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
 

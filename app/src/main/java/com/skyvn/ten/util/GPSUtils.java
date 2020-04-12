@@ -110,6 +110,7 @@ public class GPSUtils {
     public void removeListener() {
         if (locationManager != null) {
             locationManager.removeUpdates(locationListener);
+            mOnLocationListener = null;
         }
     }
 

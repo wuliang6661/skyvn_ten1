@@ -228,6 +228,10 @@ public class BindBankCardActivity extends MVPBaseActivity<BindBankCardContract.V
             showToast(getResources().getString(R.string.suoshuzhihang_toast));
             return;
         }
+        if (strBankNum.length() < 9) {
+            showToast(getString(R.string.yinghangkahaoxu));
+            return;
+        }
         HttpServerImpl.bindBankCard(stryinhangName, strBankNum, strName, suoshuzhihang, bankBOS.get(selectPosition).getCode(), selectYingHangType + "")
                 .subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
                     @Override

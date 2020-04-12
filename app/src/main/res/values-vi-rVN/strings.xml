@@ -419,4 +419,5 @@
     <string name="qingdakaigps">Xin hãy đến giao diện thiết lập để mở quyền GPS</string>
     <string name="gpshuoqushibai">Lỗi mua GPS</string>
     <string name="huoquxieyishibai">Lỗi đạt được thỏa thuận</string>
+    <string name="yinghangkahaoxu">Số thẻ ngân hàng cần tới số 9 đến 16!</string>
 </resources>

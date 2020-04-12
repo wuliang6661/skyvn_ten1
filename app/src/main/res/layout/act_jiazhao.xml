@@ -47,10 +47,11 @@
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/title_bar_layout"
         android:background="#FDFCEC"
         android:gravity="center_vertical"
+        android:minHeight="35dp"
         android:orientation="horizontal">
 
 
@@ -65,10 +66,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
-            android:ellipsize="marquee"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:singleLine="true"
             android:text="@string/msg_warning_hint"
             android:textColor="#F86E21"
             android:textSize="13sp" />

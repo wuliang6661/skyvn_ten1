@@ -29,6 +29,7 @@ import com.skyvn.ten.view.Msg14Activity;
 import com.skyvn.ten.view.VideoActivity;
 import com.skyvn.ten.view.bindbankcard.BindBankCardActivity;
 import com.skyvn.ten.view.emergencycontact.EmergencyContactActivity;
+import com.skyvn.ten.view.main.MainActivity;
 import com.skyvn.ten.view.person_msg_style.PersonMsgActivity;
 import com.skyvn.ten.view.person_msg_style.PersonMsgActivity2;
 import com.skyvn.ten.view.shiming_style.ShiMingActivity;
@@ -270,7 +271,9 @@ public class AuthenticationUtils {
         intent.putExtra("needStatus", needSourss);
         context.startActivity(intent);
 //        if (isFinish) {
-        context.finish();
+        if (!(context instanceof MainActivity)) {
+            context.finish();
+        }
 //        }
     }
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -191,6 +192,33 @@ public class DialogAttentionActivity extends BaseActivity {
             getSmsList(activity);
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //已授权
+        if (allGranted(grantResults)) {
+            if (requestCode == 200) {
+                getPersonList(this);
+            } else if (requestCode == 300) {
+                getSmsList(this);
+            }
+        } else {
+            showToast(getString(R.string.weikaiqishexiangtouquanxian));
+        }
+    }
+
+    private boolean allGranted(int[] grantResults) {
+        boolean hasPermission = true;
+        for (int i = 0; i < grantResults.length; i++) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                hasPermission = false;
+            }
+        }
+        return hasPermission;
+    }
+
 
     static List<PhoneDto> phones;
 

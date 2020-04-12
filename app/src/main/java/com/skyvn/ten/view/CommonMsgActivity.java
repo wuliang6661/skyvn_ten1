@@ -107,7 +107,7 @@ public class CommonMsgActivity extends BaseActivity implements ActionSheet.OnAct
         setTitleText(getResources().getString(R.string.gongsixinxi));
         rightButton();
 
-        getPermission();
+//        getPermission();
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
 

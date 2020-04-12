@@ -69,11 +69,14 @@
 
             <TextView
                 android:id="@+id/go_attention"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:background="@drawable/attestation_bg"
                 android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="@string/qurenzheng"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 

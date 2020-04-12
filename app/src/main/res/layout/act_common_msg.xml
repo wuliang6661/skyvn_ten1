@@ -395,7 +395,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/add_img"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
                     android:text="@string/add_img_hint"
                     android:textColor="#40A5ED"
                     android:textSize="13sp" />

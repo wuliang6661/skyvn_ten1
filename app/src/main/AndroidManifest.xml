@@ -51,6 +51,7 @@
         <activity
             android:name="com.skyvn.ten.view.SplashActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,101 +63,160 @@
         <!--登录页-->
         <activity
             android:name="com.skyvn.ten.view.LoginActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!--主页-->
         <activity
             android:name="com.skyvn.ten.view.main.MainActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!--客服-->
         <activity
             android:name="com.skyvn.ten.view.KefuActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!--我的银行卡-->
-        <activity android:name="com.skyvn.ten.view.MyBankCardActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.MyBankCardActivity"
+            android:screenOrientation="portrait" />
 
         <!--反馈-->
-        <activity android:name="com.skyvn.ten.view.FanKuiActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.FanKuiActivity"
+            android:screenOrientation="portrait" />
 
         <!--设置-->
-        <activity android:name="com.skyvn.ten.view.SettingActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.SettingActivity"
+            android:screenOrientation="portrait" />
 
         <!--个人资料-->
-        <activity android:name="com.skyvn.ten.view.attentionziliao.AttentionZiliaoActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.attentionziliao.AttentionZiliaoActivity"
+            android:screenOrientation="portrait" />
 
         <!--绑定银行卡-->
-        <activity android:name="com.skyvn.ten.view.bindbankcard.BindBankCardActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.bindbankcard.BindBankCardActivity"
+            android:screenOrientation="portrait" />
 
         <!--紧急联系人-->
-        <activity android:name="com.skyvn.ten.view.emergencycontact.EmergencyContactActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.emergencycontact.EmergencyContactActivity"
+            android:screenOrientation="portrait" />
 
         <!--通讯录-->
-        <activity android:name="com.skyvn.ten.view.contact.ContactActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.contact.ContactActivity"
+            android:screenOrientation="portrait" />
 
         <!--个人资料-->
-        <activity android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity"
+            android:screenOrientation="portrait" />
 
         <!--个人资料2-->
-        <activity android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity2" />
+        <activity
+            android:name="com.skyvn.ten.view.person_msg_style.PersonMsgActivity2"
+            android:screenOrientation="portrait" />
 
         <!--公司信息-->
-        <activity android:name="com.skyvn.ten.view.CommonMsgActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.CommonMsgActivity"
+            android:screenOrientation="portrait" />
 
         <!--短信1414-->
-        <activity android:name="com.skyvn.ten.view.Msg14Activity" />
+        <activity
+            android:name="com.skyvn.ten.view.Msg14Activity"
+            android:screenOrientation="portrait" />
 
         <!--驾照-->
-        <activity android:name="com.skyvn.ten.view.JiaZhaoActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.JiaZhaoActivity"
+            android:screenOrientation="portrait" />
 
         <!--小视频-->
-        <activity android:name="com.skyvn.ten.view.VideoActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.VideoActivity"
+            android:screenOrientation="portrait" />
 
         <!--实名认证-->
-        <activity android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity"
+            android:screenOrientation="portrait" />
 
         <!--实名认证2-->
-        <activity android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity2" />
+        <activity
+            android:name="com.skyvn.ten.view.shiming_style.ShiMingActivity2"
+            android:screenOrientation="portrait" />
 
         <!--开始人脸识别预备页面-->
-        <activity android:name="com.skyvn.ten.view.LiveAttentionActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.LiveAttentionActivity"
+            android:screenOrientation="portrait" />
 
         <!--人脸识别成功页面-->
-        <activity android:name="com.skyvn.ten.view.LiveAuthSouressActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.LiveAuthSouressActivity"
+            android:screenOrientation="portrait" />
 
         <!--人脸识别失败页面-->
-        <activity android:name="com.skyvn.ten.view.LiveAuthErrorActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.LiveAuthErrorActivity"
+            android:screenOrientation="portrait" />
 
         <!--系统消息页面-->
-        <activity android:name="com.skyvn.ten.view.MessageActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.MessageActivity"
+            android:screenOrientation="portrait" />
 
         <!--立即借款页面-->
-        <activity android:name="com.skyvn.ten.view.ConfirmationActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.ConfirmationActivity"
+            android:screenOrientation="portrait" />
 
         <!--借款详情风格1-->
-        <activity android:name="com.skyvn.ten.view.borrow_style1.BorrowActivity1" />
+        <activity
+            android:name="com.skyvn.ten.view.borrow_style1.BorrowActivity1"
+            android:screenOrientation="portrait" />
 
         <!--还款详情风格1-->
-        <activity android:name="com.skyvn.ten.view.pay_back_style1.PayBackActivity1" />
+        <activity
+            android:name="com.skyvn.ten.view.pay_back_style1.PayBackActivity1"
+            android:screenOrientation="portrait" />
 
         <!--还款详情风格2-->
-        <activity android:name="com.skyvn.ten.view.pay_back_style2.PayBackActivity2" />
+        <activity
+            android:name="com.skyvn.ten.view.pay_back_style2.PayBackActivity2"
+            android:screenOrientation="portrait" />
 
         <!--展期说明-->
-        <activity android:name="com.skyvn.ten.view.ZhanQiActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.ZhanQiActivity"
+            android:screenOrientation="portrait" />
 
         <!--所有网页加载的页面-->
-        <activity android:name="com.skyvn.ten.view.WebActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.WebActivity"
+            android:screenOrientation="portrait" />
 
         <!--还款流水页面-->
-        <activity android:name="com.skyvn.ten.view.HuanKuanListActivty" />
+        <activity
+            android:name="com.skyvn.ten.view.HuanKuanListActivty"
+            android:screenOrientation="portrait" />
 
         <!--我的借款页面-->
-        <activity android:name="com.skyvn.ten.view.MyOrderActivity" />
+        <activity
+            android:name="com.skyvn.ten.view.MyOrderActivity"
+            android:screenOrientation="portrait" />
 
         <!--弹窗认证界面-->
-        <activity android:name=".view.DialogAttentionActivity"/>
+        <activity
+            android:name=".view.DialogAttentionActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

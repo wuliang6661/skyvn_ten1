@@ -84,7 +84,7 @@ public class VideoActivity extends BaseActivity implements ActionSheet.OnActionS
         setTitleText(getResources().getString(R.string.xiaoshipin));
         rightButton();
 
-        getPermission();
+//        getPermission();
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
 

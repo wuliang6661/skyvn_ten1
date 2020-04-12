@@ -39,6 +39,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="7dp"
         android:layout_marginRight="15dp"
+        android:gravity="center"
         android:text="@string/zaixiankefu_hint"
         android:textColor="#999999"
         android:textSize="14sp" />

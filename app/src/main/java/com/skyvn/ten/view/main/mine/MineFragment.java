@@ -95,6 +95,9 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
             @Override
             public void onSuccess(AttentionSourrssBO s) {
                 stopProgress();
+                if (!"-1".equals(s.getCode())) {
+                    gotoActivity(AttentionZiliaoActivity.class, false);
+                }
                 AuthenticationUtils.goAuthNextPageByHome(s.getCode(), s.getNeedStatus(), false, getActivity());
             }
 
@@ -111,9 +114,9 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
         HttpServerImpl.getFirstAuth().subscribe(new HttpResultSubscriber<AttentionSourrssBO>() {
             @Override
             public void onSuccess(AttentionSourrssBO s) {
-                if("-1".equals(s.getCode())){
+                if ("-1".equals(s.getCode())) {
                     goAttention.setText(R.string.yirenzheng);
-                }else{
+                } else {
                     goAttention.setText(R.string.qurenzheng);
                 }
             }

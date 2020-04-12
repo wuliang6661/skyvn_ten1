@@ -90,7 +90,7 @@ public class JiaZhaoActivity extends BaseActivity implements ActionSheet.OnActio
         setTitleText(getResources().getString(R.string.jiazhao));
         rightButton();
 
-        getPermission();
+//        getPermission();
         cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" +
                 System.currentTimeMillis() + ".jpg");
 
