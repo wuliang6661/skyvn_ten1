@@ -149,10 +149,10 @@ public class ConfirmationActivity extends BaseActivity {
                     title = getResources().getString(R.string.jiekuan_hint4);
                 }
                 if (url.contains("?")) {
-                    url += "&loanId=" + orderId + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                    url += "&productId=" + orderDetailsBO.getProductId() + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
                             MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
                 } else {
-                    url += "?loanId=" + orderId + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                    url += "?productId=" + orderDetailsBO.getProductId() + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
                             MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
                 }
                 Bundle bundle = new Bundle();
