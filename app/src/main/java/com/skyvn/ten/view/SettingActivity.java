@@ -16,6 +16,7 @@ import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
 import com.skyvn.ten.base.BaseActivity;
 import com.skyvn.ten.base.MyApplication;
+import com.skyvn.ten.bean.GoHomeEvent;
 import com.skyvn.ten.config.IConstant;
 import com.skyvn.ten.util.AppManager;
 import com.skyvn.ten.util.language.LanguageType;
@@ -23,6 +24,8 @@ import com.skyvn.ten.util.language.LanguageUtil;
 import com.skyvn.ten.view.main.MainActivity;
 import com.skyvn.ten.widget.AlertDialog;
 import com.skyvn.ten.widget.PopXingZhi;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,10 +63,10 @@ public class SettingActivity extends BaseActivity {
         goBack();
         setTitleText(getResources().getString(R.string.setting));
 
-        if(MyApplication.userBO == null){
+        if (MyApplication.userBO == null) {
             userPhone.setText(R.string.weidenglu);
             userImg.setImageResource(R.drawable.user_img_defalt);
-        }else{
+        } else {
             userPhone.setText(MyApplication.userBO.getPhone());
             Glide.with(this).load(MyApplication.userBO.getHeadPortrait())
                     .error(R.drawable.user_img_defalt).
@@ -150,7 +153,8 @@ public class SettingActivity extends BaseActivity {
             public void onSuccess(String s) {
                 stopProgress();
                 MyApplication.spUtils.remove("token");
-                AppManager.getAppManager().finishAllActivity();
+                MyApplication.token = null;
+                EventBus.getDefault().post(new GoHomeEvent());
                 gotoActivity(LoginActivity.class, true);
             }
 

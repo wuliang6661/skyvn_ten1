@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.FragmentUtils;
 import com.blankj.utilcode.util.StringUtils;
+import com.gyf.barlibrary.ImmersionBar;
 import com.skyvn.ten.R;
 import com.skyvn.ten.api.HttpResultSubscriber;
 import com.skyvn.ten.api.HttpServerImpl;
@@ -73,8 +74,21 @@ public class HomeAllFragment extends BaseFragment {
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
+        //请在onSupportVisible实现沉浸式
+        if (isImmersionBarEnabled()) {
+            initImmersionBar();
+        }
         getNotices();
         getIndex();
+    }
+
+    public void initImmersionBar() {
+        ImmersionBar.with(this).statusBarColor(R.color.white)
+                .statusBarDarkFont(true).keyboardEnable(true).init();   //解决虚拟按键与状态栏沉浸冲突
+    }
+
+    private boolean isImmersionBarEnabled() {
+        return true;
     }
 
     /**
