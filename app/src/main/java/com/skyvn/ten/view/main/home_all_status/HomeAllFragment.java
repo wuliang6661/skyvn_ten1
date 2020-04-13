@@ -237,6 +237,7 @@ public class HomeAllFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        ImmersionBar.with(this).destroy();
         EventBus.getDefault().unregister(this);
     }
 }
