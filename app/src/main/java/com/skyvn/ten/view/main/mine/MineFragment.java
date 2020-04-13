@@ -95,6 +95,9 @@ public class MineFragment extends MVPBaseFragment<MineContract.View, MinePresent
             @Override
             public void onSuccess(AttentionSourrssBO s) {
                 stopProgress();
+                if (!"-1".equals(s.getCode())) {
+                    gotoActivity(AttentionZiliaoActivity.class, false);
+                }
                 AuthenticationUtils.goAuthNextPageByHome(s.getCode(), s.getNeedStatus(), false, getActivity());
             }
 

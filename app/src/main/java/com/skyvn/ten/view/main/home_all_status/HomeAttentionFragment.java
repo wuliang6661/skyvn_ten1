@@ -33,6 +33,7 @@ import com.skyvn.ten.util.GPSUtils;
 import com.skyvn.ten.view.ConfirmationActivity;
 import com.skyvn.ten.view.KefuActivity;
 import com.skyvn.ten.view.LoginActivity;
+import com.skyvn.ten.view.attentionziliao.AttentionZiliaoActivity;
 import com.skyvn.ten.widget.PopXingZhi;
 
 import java.util.List;
@@ -239,6 +240,9 @@ public class HomeAttentionFragment extends BaseFragment {
             @Override
             public void onSuccess(AttentionSourrssBO s) {
                 stopProgress();
+                if (!"-1".equals(s.getCode())) {
+                    gotoActivity(AttentionZiliaoActivity.class, false);
+                }
                 AuthenticationUtils.goAuthNextPageByHome(s.getCode(), s.getNeedStatus(), false, getActivity());
             }
 
