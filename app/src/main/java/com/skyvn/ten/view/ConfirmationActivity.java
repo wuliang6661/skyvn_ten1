@@ -149,15 +149,15 @@ public class ConfirmationActivity extends BaseActivity {
                     title = getResources().getString(R.string.jiekuan_hint4);
                 }
                 if (url.contains("?")) {
-                    url += "&productId=" + orderDetailsBO.getProductId() + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                    url += "&productId=" + orderDetailsBO.getProductId() + "&token=" + MyApplication.token + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
                             MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
                 } else {
-                    url += "?productId=" + orderDetailsBO.getProductId() + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
+                    url += "?productId=" + orderDetailsBO.getProductId() + "&token=" + MyApplication.token + "&tenantId=" + orderDetailsBO.getTenantId() + "&language=" +
                             MyApplication.spUtils.getString(IConstant.LANGUAGE_TYPE, LanguageType.CHINESE.getLanguage());
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("url", url);
-                bundle.putString("title",title);
+                bundle.putString("title", title);
                 gotoActivity(WebActivity.class, bundle, false);
             }
 
