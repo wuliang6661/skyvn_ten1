@@ -86,6 +86,11 @@ public class HomeAttentionFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         indexBO = HomeAllFragment.indexBO;
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -93,11 +98,6 @@ public class HomeAttentionFragment extends BaseFragment {
             }
         });
         getDays();
-    }
-
-    @Override
-    public void onSupportVisible() {
-        super.onSupportVisible();
 
     }
 
@@ -199,7 +199,8 @@ public class HomeAttentionFragment extends BaseFragment {
         HttpServerImpl.getIndexFanwei().subscribe(new HttpResultSubscriber<String>() {
             @Override
             public void onSuccess(String s) {
-                payNum.setText(s == null ? "" : s);
+                String item = (s == null ? "" : s);
+                payNum.setText(item);
             }
 
             @Override
@@ -221,7 +222,7 @@ public class HomeAttentionFragment extends BaseFragment {
                     return;
                 }
                 days = s;
-                daysText.setText(s.get(0));
+                daysText.setText(s.get(0)+"");
             }
 
             @Override
