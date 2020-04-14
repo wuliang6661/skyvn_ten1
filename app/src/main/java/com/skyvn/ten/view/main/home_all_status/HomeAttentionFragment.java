@@ -200,7 +200,11 @@ public class HomeAttentionFragment extends BaseFragment {
             @Override
             public void onSuccess(String s) {
                 String item = (s == null ? "" : s);
-                payNum.setText(item);
+                try {
+                    payNum.setText(item);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
 
             @Override
@@ -222,7 +226,11 @@ public class HomeAttentionFragment extends BaseFragment {
                     return;
                 }
                 days = s;
-                daysText.setText(s.get(0)+"");
+                try {
+                    daysText.setText(s.get(0) + "");
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
 
             @Override
