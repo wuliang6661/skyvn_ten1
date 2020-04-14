@@ -62,16 +62,16 @@ public class HomeLoadingFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         indexBO = HomeAllFragment.indexBO;
-        payNumTitle.setText(R.string.yinghuanjine_yuan);
-        payNum.setText(indexBO.getOrderLoanVO().getDelayRepaymentAmount());
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                showIndex();
-            }
-        });
+
     }
 
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+        payNumTitle.setText(R.string.yinghuanjine_yuan);
+        payNum.setText(indexBO.getOrderLoanVO().getDelayRepaymentAmount());
+        showIndex();
+    }
 
     /**
      * 显示不同页面样式
@@ -91,11 +91,11 @@ public class HomeLoadingFragment extends BaseFragment {
         } else {
 //            switch (indexBO.getOrderLoanRepaySerialVO().getType()) {
 //                case "0":
-                    loadingLayout.setVisibility(View.VISIBLE);
-                    buttonLayout.setVisibility(View.GONE);
-                    btLogin.setVisibility(View.VISIBLE);
-                    loadingText.setText(R.string.huankuanchulizhong);
-                    payNum.setTextColor(Color.parseColor("#333333"));
+            loadingLayout.setVisibility(View.VISIBLE);
+            buttonLayout.setVisibility(View.GONE);
+            btLogin.setVisibility(View.VISIBLE);
+            loadingText.setText(R.string.huankuanchulizhong);
+            payNum.setTextColor(Color.parseColor("#333333"));
 //                    break;
 //            }
         }

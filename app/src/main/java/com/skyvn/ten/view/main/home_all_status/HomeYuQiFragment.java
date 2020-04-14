@@ -53,11 +53,16 @@ public class HomeYuQiFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         indexBO = HomeAllFragment.indexBO;
+
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
         shouxinShengyuText.setText(indexBO.getOrderLoanVO().getOverdueDays() + getString(R.string.danwei_tian));
         yuqiWeiyuejin.setText(indexBO.getOrderLoanVO().getOverdueSum());
         yinghuanJine.setText(indexBO.getOrderLoanVO().getRepaymentAmount() + "");
     }
-
 
     @OnClick(R.id.bt_login)
     public void commit() {

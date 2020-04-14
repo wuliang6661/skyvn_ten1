@@ -1,7 +1,6 @@
 package com.skyvn.ten.view.main.home_all_status;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -53,12 +52,12 @@ public class HomeBufenFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         indexBO = HomeAllFragment.indexBO;
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                showIndex();
-            }
-        });
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+        showIndex();
     }
 
     private void showIndex() {

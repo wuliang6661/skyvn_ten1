@@ -83,12 +83,12 @@ public class HomeExamineFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         indexBO = HomeAllFragment.indexBO;
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                showIndex();
-            }
-        });
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+        showIndex();
     }
 
     /**
@@ -177,7 +177,11 @@ public class HomeExamineFragment extends BaseFragment {
                     return;
                 }
                 days = s;
-                daysText.setText(s.get(0));
+                try {
+                    daysText.setText(s.get(0));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
 
             @Override
