@@ -63,7 +63,11 @@ public class HomeEDuNoneFragment extends BaseFragment {
         HttpServerImpl.getIndexFanwei().subscribe(new HttpResultSubscriber<String>() {
             @Override
             public void onSuccess(String s) {
-                payNum.setText(s);
+                try {
+                    payNum.setText(s);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
 
             @Override
@@ -85,7 +89,12 @@ public class HomeEDuNoneFragment extends BaseFragment {
                     return;
                 }
                 days = s;
-                daysText.setText(s.get(0));
+                try {
+                    daysText.setText(s.get(0));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
             }
 
             @Override
